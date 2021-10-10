@@ -1,0 +1,19 @@
+{
+  "name": "@nhz/utils",
+  "version": "0.0.0",
+  "description": "【@nhz/utils】Collection of common JavaScript / TypeScript utils 🌏",
+  "main": "dist/index.cmj.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xizher/nhz-utils.git"
+  },
+  "author": "ngheizit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xizher/nhz-utils/issues"
+  },
+  "homepage": "https://github.com/xizher/nhz-utils#readme"
+}
