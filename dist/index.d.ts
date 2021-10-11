@@ -38,4 +38,6 @@ declare const isNullable: (val: unknown) => val is null | undefined;
  */
 declare const isPromise: (val: unknown) => val is Promise<unknown>;
 
-export { isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString };
+declare function makeDestructurable<T extends Record<string, unknown>, A extends readonly unknown[]>(obj: T, arr: A): T & A;
+
+export { isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable };

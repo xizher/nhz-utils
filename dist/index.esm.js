@@ -40,4 +40,21 @@ const isNullable = (val) => typeof val === 'undefined' || val === null;
 // @ts-ignore
 const isPromise = (val) => val instanceof Promise;
 
-export { isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString };
+function makeDestructurable(obj, arr) {
+    const clone = { ...obj };
+    Object.defineProperty(clone, Symbol.iterator, {
+        enumerable: false,
+        value() {
+            let index = 0;
+            return {
+                next: () => ({
+                    value: arr[index++],
+                    done: index > arr.length,
+                })
+            };
+        }
+    });
+    return clone;
+}
+
+export { isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable };
