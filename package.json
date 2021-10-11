@@ -4,7 +4,12 @@
   "description": "【@nhz/utils】Collection of common JavaScript / TypeScript utils 🌏",
   "main": "dist/index.cmj.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "test": "npx jest",
+    "test:dev": "npx jest --watch",
+    "build:is": "npx rollup --config build/build.is.js",
+    "build": "npx rollup --config build/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +20,19 @@
   "bugs": {
     "url": "https://github.com/xizher/nhz-utils/issues"
   },
-  "homepage": "https://github.com/xizher/nhz-utils#readme"
+  "homepage": "https://github.com/xizher/nhz-utils#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.5",
+    "@types/jest": "^27.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "rollup": "^2.58.0",
+    "rollup-jest": "^1.1.3",
+    "rollup-plugin-dts": "^4.0.0",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.3"
+  }
 }
