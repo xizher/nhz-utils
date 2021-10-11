@@ -9,6 +9,7 @@
     "test": "npx jest",
     "test:dev": "npx jest --watch",
     "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "readme": "node build/readme.js",
     "version": "node build/version.js",
     "build:is": "npx rollup --config build/build.is.js",
     "build:return": "npx rollup --config build/build.return.js",
@@ -37,6 +38,8 @@
     "rollup-plugin-dts": "^4.0.0",
     "rollup-plugin-typescript2": "^0.30.0",
     "ts-jest": "^27.0.5",
+    "typedoc": "^0.22.5",
+    "typedoc-plugin-markdown": "^3.11.3",
     "typescript": "^4.4.3"
   }
 }

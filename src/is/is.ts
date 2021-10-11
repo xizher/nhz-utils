@@ -39,9 +39,11 @@ export const isNullable = (val: unknown): val is undefined | null => typeof val 
  * 判断变量是否为 Promise 类型
  * @param val 变量
  * @example
+ * ```ts
  * toString.call(val) === '[object Promise]'
  * !!val && (typeof val === 'object' || typeof val === 'function') && typeof val.then === 'function'
  * val instanceof Promise // <-
+ * ```
  */
 // eslint-disable-next-line
 // @ts-ignore
