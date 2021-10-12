@@ -14,6 +14,7 @@
     "build:is": "npx rollup --config build/build.is.js",
     "build:return": "npx rollup --config build/build.return.js",
     "build:date": "npx rollup --config build/build.date.js",
+    "build:watch": "npx rollup --config build/build.watch.js",
     "build": "npx rollup --config build/index.js"
   },
   "repository": {
