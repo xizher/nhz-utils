@@ -4,13 +4,15 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { resolve } from 'path'
 import dts from 'rollup-plugin-dts'
 
+const module = 'watch'
+
 export default [
   {
-    input: resolve('src', 'watch', 'index.ts'),
+    input: resolve('src', module, 'index.ts'),
     output: [
-      { format: 'esm', file: resolve('watch', 'index.esm.js') },
-      { format: 'esm', file: resolve('watch', 'index.js') },
-      { format: 'cjs', file: resolve('watch', 'index.cjs.js') },
+      { format: 'esm', file: resolve(module, 'index.esm.js') },
+      { format: 'esm', file: resolve(module, 'index.js') },
+      { format: 'cjs', file: resolve(module, 'index.cjs.js') },
     ],
     plugins: [
       typescript(),
@@ -21,9 +23,9 @@ export default [
   {
     input: resolve('src', 'watch', 'index.ts'),
     output: [
-      { format: 'esm', file: resolve('watch', 'index.d.ts') },
-      { format: 'esm', file: resolve('watch', 'index.esm.d.ts') },
-      { format: 'esm', file: resolve('watch', 'index.cjs.d.ts') },
+      { format: 'esm', file: resolve(module, 'index.d.ts') },
+      { format: 'esm', file: resolve(module, 'index.esm.d.ts') },
+      { format: 'esm', file: resolve(module, 'index.cjs.d.ts') },
     ],
     plugins: [dts()],
   },

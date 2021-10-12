@@ -4,13 +4,15 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { resolve } from 'path'
 import dts from 'rollup-plugin-dts'
 
+const module = 'date'
+
 export default [
   {
-    input: resolve('src', 'date', 'index.ts'),
+    input: resolve('src', module, 'index.ts'),
     output: [
-      { format: 'esm', file: resolve('date', 'index.esm.js') },
-      { format: 'esm', file: resolve('date', 'index.js') },
-      { format: 'cjs', file: resolve('date', 'index.cjs.js') },
+      { format: 'esm', file: resolve(module, 'index.esm.js') },
+      { format: 'esm', file: resolve(module, 'index.js') },
+      { format: 'cjs', file: resolve(module, 'index.cjs.js') },
     ],
     plugins: [
       typescript(),
@@ -19,11 +21,11 @@ export default [
     ]
   },
   {
-    input: resolve('src', 'date', 'index.ts'),
+    input: resolve('src', 'watch', 'index.ts'),
     output: [
-      { format: 'esm', file: resolve('date', 'index.d.ts') },
-      { format: 'esm', file: resolve('date', 'index.esm.d.ts') },
-      { format: 'esm', file: resolve('date', 'index.cjs.d.ts') },
+      { format: 'esm', file: resolve(module, 'index.d.ts') },
+      { format: 'esm', file: resolve(module, 'index.esm.d.ts') },
+      { format: 'esm', file: resolve(module, 'index.cjs.d.ts') },
     ],
     plugins: [dts()],
   },
