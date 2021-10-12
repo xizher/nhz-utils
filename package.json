@@ -11,9 +11,10 @@
     "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "readme": "node build/readme.js",
     "version": "node build/version.js",
-    "build:is": "npx rollup --config build/build.is.js",
-    "build:return": "npx rollup --config build/build.return.js",
-    "build:date": "npx rollup --config build/build.date.js",
+    "build:is": "npx rollup --config build/build.is.js && npm run build",
+    "build:return": "npx rollup --config build/build.return.js && npm run build",
+    "build:date": "npx rollup --config build/build.date.js && npm run build",
+    "build:watch": "npx rollup --config build/build.watch.js && npm run build",
     "build": "npx rollup --config build/index.js"
   },
   "repository": {

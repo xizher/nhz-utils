@@ -30,7 +30,7 @@ date
 
 #### Defined in
 
-date.ts:14
+[date.ts:14](https://github.com/xizher/nhz-utils/blob/af84f98/src/date/date.ts#L14)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-date.ts:33
+[date.ts:33](https://github.com/xizher/nhz-utils/blob/af84f98/src/date/date.ts#L33)
 
 ___
 
@@ -69,4 +69,4 @@ ___
 
 #### Defined in
 
-date.ts:6
+[date.ts:6](https://github.com/xizher/nhz-utils/blob/af84f98/src/date/date.ts#L6)

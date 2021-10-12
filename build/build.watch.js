@@ -4,7 +4,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { resolve } from 'path'
 import dts from 'rollup-plugin-dts'
 
-const module = 'date'
+const module = 'watch'
 
 export default [
   {
