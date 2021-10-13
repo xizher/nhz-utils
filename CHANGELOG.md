@@ -1,3 +1,13 @@
+## [0.0.4](https://github.com/xizher/nhz-utils/compare/v0.0.3...v0.0.4) (2021-10-13)
+
+
+### Features
+
+* **random:** 与随机性相关的函数模块 [#1](https://github.com/xizher/nhz-utils/issues/1) ([5440d7f](https://github.com/xizher/nhz-utils/commit/5440d7f1675111d43973f255c66e79ee4ba9446f))
+* **watch:** 主动观测类实现 Observable [#8](https://github.com/xizher/nhz-utils/issues/8) ([49f9e13](https://github.com/xizher/nhz-utils/commit/49f9e13da792d46b8c5c18e478159f15510ee755))
+
+
+
 ## [0.0.3](https://github.com/xizher/nhz-utils/compare/v0.0.2...v0.0.3) (2021-10-12)
 
 
