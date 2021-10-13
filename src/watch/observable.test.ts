@@ -1,3 +1,4 @@
+// import { ObservableProperty } from '.'
 import Observable from './observable'
 
 interface Prop {
@@ -6,7 +7,7 @@ interface Prop {
   'change': void
 }
 
-export class TestClass<T extends Prop> extends Observable<T & Prop> {
+class TestClass<T extends Prop> extends Observable<T & Prop> {
   private _value = 1
   constructor () {
     super()
@@ -186,3 +187,46 @@ test('能够终止事件传递', () => {
   testObj.inc()
   expect(count).toBe(3)
 })
+
+// class TestClass2 extends Observable<{
+//   'change:value': {
+//     value: number
+//     oldValue: number
+//   }
+// }> {
+
+//   @ObservableProperty('change:value')
+//   private _value
+
+//   get value () : number {
+//     return this._value
+//   }
+
+//   constructor () {
+//     super()
+//     this._value = 1
+//   }
+
+//   inc () : void {
+//     this._value++
+//   }
+//   dec () : void {
+//     this._value--
+//   }
+// }
+
+// test('ObservableProperty装饰器能够正常运行', () => {
+//   const testObj = new TestClass2() as any
+//   console.log(testObj._value, testObj.__proto__._value)
+//   expect(testObj.value).toBe(1)
+//   let _value, _oldValue, count = 0
+//   testObj.on('change:value', ({ value, oldValue }) => {
+//     console.log('change:value')
+//     _value = value
+//     _oldValue = oldValue
+//     count++
+//   })
+//   testObj.inc()
+//   expect(count).toBe(1)
+//   // expect(_oldValue).toBe(1)
+// })
