@@ -38,4 +38,4 @@ Destructuring with object or array
 
 #### Defined in
 
-[return.ts:7](https://github.com/xizher/nhz-utils/blob/24c3d73/src/return/return.ts#L7)
+[return.ts:7](https://github.com/xizher/nhz-utils/blob/0dc0666/src/return/return.ts#L7)

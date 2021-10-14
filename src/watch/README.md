@@ -50,4 +50,4 @@ watch
 
 #### Defined in
 
-[observable.ts:28](https://github.com/xizher/nhz-utils/blob/24c3d73/src/watch/observable.ts#L28)
+[observable.ts:28](https://github.com/xizher/nhz-utils/blob/0dc0666/src/watch/observable.ts#L28)

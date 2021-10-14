@@ -25,7 +25,7 @@ random
 
 #### Defined in
 
-[random.ts:31](https://github.com/xizher/nhz-utils/blob/24c3d73/src/random/random.ts#L31)
+[random.ts:31](https://github.com/xizher/nhz-utils/blob/0dc0666/src/random/random.ts#L31)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-[random.ts:22](https://github.com/xizher/nhz-utils/blob/24c3d73/src/random/random.ts#L22)
+[random.ts:22](https://github.com/xizher/nhz-utils/blob/0dc0666/src/random/random.ts#L22)
 
 ___
 
@@ -76,7 +76,7 @@ createUid(true) // -> xxxxxxxx-xxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 #### Defined in
 
-[random.ts:10](https://github.com/xizher/nhz-utils/blob/24c3d73/src/random/random.ts#L10)
+[random.ts:10](https://github.com/xizher/nhz-utils/blob/0dc0666/src/random/random.ts#L10)
 
 ___
 
@@ -104,4 +104,4 @@ ___
 
 #### Defined in
 
-[random.ts:39](https://github.com/xizher/nhz-utils/blob/24c3d73/src/random/random.ts#L39)
+[random.ts:39](https://github.com/xizher/nhz-utils/blob/0dc0666/src/random/random.ts#L39)

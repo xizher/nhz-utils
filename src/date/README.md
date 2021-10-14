@@ -8,6 +8,7 @@ date
 
 - [getMonth](README.md#getmonth)
 - [getNextDate](README.md#getnextdate)
+- [sleep](README.md#sleep)
 - [timestamp](README.md#timestamp)
 
 ## Functions
@@ -30,7 +31,7 @@ date
 
 #### Defined in
 
-[date.ts:14](https://github.com/xizher/nhz-utils/blob/24c3d73/src/date/date.ts#L14)
+[date.ts:14](https://github.com/xizher/nhz-utils/blob/0dc0666/src/date/date.ts#L14)
 
 ___
 
@@ -53,7 +54,29 @@ ___
 
 #### Defined in
 
-[date.ts:33](https://github.com/xizher/nhz-utils/blob/24c3d73/src/date/date.ts#L33)
+[date.ts:33](https://github.com/xizher/nhz-utils/blob/0dc0666/src/date/date.ts#L33)
+
+___
+
+### sleep
+
+▸ **sleep**(`timestamp`): `Promise`<`void`\>
+
+等待
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `timestamp` | `number` | 时间戳 |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[date.ts:41](https://github.com/xizher/nhz-utils/blob/0dc0666/src/date/date.ts#L41)
 
 ___
 
@@ -69,4 +92,4 @@ ___
 
 #### Defined in
 
-[date.ts:6](https://github.com/xizher/nhz-utils/blob/24c3d73/src/date/date.ts#L6)
+[date.ts:6](https://github.com/xizher/nhz-utils/blob/0dc0666/src/date/date.ts#L6)

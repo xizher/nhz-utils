@@ -32,4 +32,4 @@ array
 
 #### Defined in
 
-[array.ts:117](https://github.com/xizher/nhz-utils/blob/24c3d73/src/array/array.ts#L117)
+[array.ts:117](https://github.com/xizher/nhz-utils/blob/0dc0666/src/array/array.ts#L117)
