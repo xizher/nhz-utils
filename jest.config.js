@@ -8,5 +8,6 @@ module.exports = {
   coveragePathIgnorePatterns: [
     '/dist',
     '/build',
-  ]
+  ],
+  testEnvironment: 'jsdom'
 }

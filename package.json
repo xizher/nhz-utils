@@ -19,6 +19,7 @@
     "build:format": "npx rollup --config build/build.format.js && npm run build",
     "build:object": "npx rollup --config build/build.object.js && npm run build",
     "build:array": "npx rollup --config build/build.array.js && npm run build",
+    "build:throttle-debounce": "npx rollup --config build/build.throttle-debounce.js && npm run build",
     "build": "npx rollup --config build/index.js"
   },
   "repository": {
