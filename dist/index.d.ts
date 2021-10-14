@@ -154,4 +154,21 @@ declare function createRandomBool(): boolean;
  */
 declare function getArrayItemRandom<T>(arr: T[]): T;
 
-export { IObservableCallback, IObservableCallbackParams, IObservableHandle, Observable, createRandomBool, createRandomInt, createUid, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, timestamp };
+/**
+ * 日期格式化
+ * @param fmt 日期格式
+ * @param date 日期
+ */
+declare function formatDate(fmt: string, date?: Date | number | string): string;
+/**
+ * 现金格式化
+ * @param num 数值
+ */
+declare function formatCash(num: number | string): string;
+/**
+ * 转为中文数字
+ * @param num 数值
+ */
+declare function formatChineseNumber(num: number | string): string;
+
+export { IObservableCallback, IObservableCallbackParams, IObservableHandle, Observable, createRandomBool, createRandomInt, createUid, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, timestamp };
