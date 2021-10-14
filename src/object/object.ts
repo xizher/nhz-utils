@@ -1,4 +1,4 @@
-import { isObject } from '..'
+import { isObject } from '../is'
 
 /**
  * 对象扩展
