@@ -171,4 +171,21 @@ declare function formatCash(num: number | string): string;
  */
 declare function formatChineseNumber(num: number | string): string;
 
-export { IObservableCallback, IObservableCallbackParams, IObservableHandle, Observable, createRandomBool, createRandomInt, createUid, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, timestamp };
+/**
+ * 对象扩展
+ * @param target 目标
+ * @param sources 源
+ */
+declare function extend<T extends object = object, S extends T = T>(target: T, ...sources: S[]): T;
+/**
+ * 深度复制（采用JSON解析方式）
+ * @param obj 复制对象
+ */
+declare function deepCopyJSON<T>(obj: T): T;
+/**
+  * 深度复制（采用递归式）
+  * @param obj 复制对象
+  */
+declare function deepCopy<T>(obj: T): T;
+
+export { IObservableCallback, IObservableCallbackParams, IObservableHandle, Observable, createRandomBool, createRandomInt, createUid, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, timestamp };

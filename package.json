@@ -17,6 +17,7 @@
     "build:watch": "npx rollup --config build/build.watch.js && npm run build",
     "build:random": "npx rollup --config build/build.random.js && npm run build",
     "build:format": "npx rollup --config build/build.format.js && npm run build",
+    "build:object": "npx rollup --config build/build.object.js && npm run build",
     "build": "npx rollup --config build/index.js"
   },
   "repository": {
