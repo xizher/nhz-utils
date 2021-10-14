@@ -97,6 +97,15 @@ function getMonth(date) {
 function getNextDate(nDays = 1, date = new Date()) {
     return new Date(date.getTime() + 24 * 60 * 60 * 1000 * Number(+nDays));
 }
+/**
+ * 等待
+ * @param timestamp 时间戳
+ */
+function sleep(timestamp) {
+    return new Promise(resolve => {
+        setTimeout(() => resolve(), timestamp);
+    });
+}
 
 /**
  * 主动监听类
@@ -508,4 +517,4 @@ function arr(target) {
     return new ArrayExtension(target);
 }
 
-export { Observable, arr, createRandomBool, createRandomInt, createUid, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, timestamp };
+export { Observable, arr, createRandomBool, createRandomInt, createUid, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, sleep, timestamp };

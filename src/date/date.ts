@@ -33,3 +33,13 @@ export function getMonth (date?: Date | number | string) : number {
 export function getNextDate (nDays = 1, date = new Date()) : Date {
   return new Date(date.getTime() + 24 * 60 * 60 * 1000 * Number(+nDays))
 }
+
+/**
+ * 等待
+ * @param timestamp 时间戳
+ */
+export function sleep (timestamp: number) : Promise<void> {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(), timestamp)
+  })
+}

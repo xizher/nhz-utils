@@ -2,6 +2,7 @@ import {
   timestamp,
   getMonth,
   getNextDate,
+  sleep,
 } from './date'
 
 test('timestamp(): can run true', () => {
@@ -31,4 +32,12 @@ test('getNextDate(): can run true', () => {
   const date = new Date('2020/05/01')
   expect(getNextDate(1, date).getDate()).toBe(2)
   expect(getNextDate(-1, date).getDate()).toBe(30)
+})
+
+test('sleep(): can run right', () => {
+  const now = timestamp()
+  const long = 1000
+  return sleep(long).then(() => {
+    expect(timestamp() - now >= long).toBeTruthy()
+  })
 })

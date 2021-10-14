@@ -101,6 +101,15 @@ function getMonth(date) {
 function getNextDate(nDays = 1, date = new Date()) {
     return new Date(date.getTime() + 24 * 60 * 60 * 1000 * Number(+nDays));
 }
+/**
+ * 等待
+ * @param timestamp 时间戳
+ */
+function sleep(timestamp) {
+    return new Promise(resolve => {
+        setTimeout(() => resolve(), timestamp);
+    });
+}
 
 /**
  * 主动监听类
@@ -534,4 +543,5 @@ exports.isObject = isObject;
 exports.isPromise = isPromise;
 exports.isString = isString;
 exports.makeDestructurable = makeDestructurable;
+exports.sleep = sleep;
 exports.timestamp = timestamp;

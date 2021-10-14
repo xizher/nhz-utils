@@ -63,6 +63,11 @@ declare function getMonth(date?: Date | number | string): number;
  * @param date 日期，默认为当前日期
  */
 declare function getNextDate(nDays?: number, date?: Date): Date;
+/**
+ * 等待
+ * @param timestamp 时间戳
+ */
+declare function sleep(timestamp: number): Promise<void>;
 
 /**
  * 监听句柄
@@ -209,4 +214,4 @@ declare class ArrayExtension<T = any> {
 }
 declare function arr<T>(target: T[]): ArrayExtension<T>;
 
-export { IObservableCallback, IObservableCallbackParams, IObservableHandle, Observable, arr, createRandomBool, createRandomInt, createUid, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, timestamp };
+export { IObservableCallback, IObservableCallbackParams, IObservableHandle, Observable, arr, createRandomBool, createRandomInt, createUid, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, sleep, timestamp };
