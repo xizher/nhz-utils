@@ -21,6 +21,7 @@
     "build:array": "npx rollup --config build/build.array.js && npm run build",
     "build:throttle-debounce": "npx rollup --config build/build.throttle-debounce.js && npm run build",
     "build:handle": "npx rollup --config build/build.handle.js && npm run build",
+    "build:transfor": "npx rollup --config build/build.transfor.js && npm run build",
     "build": "npx rollup --config build/index.js"
   },
   "repository": {

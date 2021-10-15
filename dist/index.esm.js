@@ -622,4 +622,12 @@ function makeEventListener(target, type, listener) {
     return () => target.removeEventListener(type, listener);
 }
 
-export { Observable, arr, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, makeEventListener, makeInterval, makeTimeout, sleep, throttle, timestamp };
+/**
+ * 首字母变小写
+ * @param str 字符串
+ */
+function toLowerCaseFirstIndex(str) {
+    return str.replace(str[0], str[0].toLowerCase());
+}
+
+export { Observable, arr, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, makeEventListener, makeInterval, makeTimeout, sleep, throttle, timestamp, toLowerCaseFirstIndex };

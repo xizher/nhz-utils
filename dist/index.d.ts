@@ -266,4 +266,10 @@ declare function makeTimeout(...args: Parameters<typeof setTimeout>): Stop;
  */
 declare function makeEventListener(target: Element | Document, type: string, listener: EventListenerOrEventListenerObject): Stop;
 
-export { IObservableCallback, IObservableCallbackParams, IObservableHandle, Observable, arr, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, makeEventListener, makeInterval, makeTimeout, sleep, throttle, timestamp };
+/**
+ * 首字母变小写
+ * @param str 字符串
+ */
+declare function toLowerCaseFirstIndex(str: string): string;
+
+export { IObservableCallback, IObservableCallbackParams, IObservableHandle, Observable, arr, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, makeEventListener, makeInterval, makeTimeout, sleep, throttle, timestamp, toLowerCaseFirstIndex };

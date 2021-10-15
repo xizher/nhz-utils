@@ -626,6 +626,14 @@ function makeEventListener(target, type, listener) {
     return () => target.removeEventListener(type, listener);
 }
 
+/**
+ * 首字母变小写
+ * @param str 字符串
+ */
+function toLowerCaseFirstIndex(str) {
+    return str.replace(str[0], str[0].toLowerCase());
+}
+
 exports.Observable = Observable;
 exports.arr = arr;
 exports.createRandomBool = createRandomBool;
@@ -655,3 +663,4 @@ exports.makeTimeout = makeTimeout;
 exports.sleep = sleep;
 exports.throttle = throttle;
 exports.timestamp = timestamp;
+exports.toLowerCaseFirstIndex = toLowerCaseFirstIndex;
