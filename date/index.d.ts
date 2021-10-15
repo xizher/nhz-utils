@@ -1,65 +1,22 @@
 /**
- * 监听句柄
+ * 获取当前时间戳
  */
-interface IObservableHandle {
-    /**
-     * 移除监听
-     */
-    remove(): void;
-}
+declare function timestamp(): number;
 /**
- * 监听回调函数参数
+ * 获取当前月份
+ * @param date 日期，默认当前日期
  */
-interface IObservableCallbackParams<NAME, THIS> {
-    /**
-     * 监听动作
-     */
-    name: NAME;
-    /**
-     * 监听源
-     */
-    origin: THIS;
-}
+declare function getMonth(date?: Date | number | string): number;
 /**
- * 监听回调函数
+ * 获取递进日期
+ * @param nDays 天数，默认为1天
+ * @param date 日期，默认为当前日期
  */
-declare type IObservableCallback<T, NAME, THIS, RET = void> = (e: T & IObservableCallbackParams<NAME, THIS>) => RET;
+declare function getNextDate(nDays?: number, date?: Date): Date;
 /**
- * 主动监听类
+ * 等待
+ * @param timestamp 时间戳
  */
-declare class Observable<T> {
-    /**
-     * 监听事件池
-     */
-    private _eventMap;
-    /**
-     * 构造主动监听对象
-     */
-    constructor();
-    /**
-     * 绑定监听函数
-     * @param name 监听类型名
-     * @param callback 监听回调函数
-     */
-    on<K extends keyof T>(name: K, callback: IObservableCallback<T[K], K, this>): IObservableHandle;
-    /**
-     * 移除监听函数
-     * @param name 监听类型名
-     * @param callback 监听回调函数（不指定者移除所有）
-     */
-    off<K extends keyof T>(name: K, callback?: IObservableCallback<T[K], K, this>): void;
-    /**
-     * 触发监听函数
-     * @param name 监听函数名
-     * @param data 数据
-     */
-    fire<K extends keyof T>(name: K, data?: T[K]): this;
-    /**
-     * 绑定监听函数（仅监听一次）
-     * @param name 监听类型名
-     * @param callback 监听回调函数
-     */
-    once<K extends keyof T>(name: K, callback: IObservableCallback<T[K], K, this>): void;
-}
+declare function sleep(timestamp: number): Promise<void>;
 
-export { IObservableCallback, IObservableCallbackParams, IObservableHandle, Observable };
+export { getMonth, getNextDate, sleep, timestamp };

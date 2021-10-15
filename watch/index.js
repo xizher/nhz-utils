@@ -92,5 +92,28 @@ class Observable {
         this.on(key, nfn);
     }
 }
+// /**
+//  * 装饰器：属性监听
+//  * @deprecated
+//  */
+// export function ObservableProperty (fireName: string) {
+//   return function (target: Observable<any>, key: string) { // eslint-disable-line
+//     let property = target[key]
+//     const getter = () => property
+//     const setter = (newVal: unknown) => {
+//       target.fire(fireName, {
+//         [key]: newVal,
+//         [`old${key.replace(key[0], key[0].toUpperCase())}`]: property,
+//       })
+//       property = newVal
+//     }
+//     Object.defineProperty(target, key, {
+//       get: getter,
+//       set: setter,
+//       enumerable: true,
+//       configurable: true,
+//     })
+//   }
+// }
 
 export { Observable };

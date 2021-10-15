@@ -1,65 +1,18 @@
 /**
- * 监听句柄
+ * 对象扩展
+ * @param target 目标
+ * @param sources 源
  */
-interface IObservableHandle {
-    /**
-     * 移除监听
-     */
-    remove(): void;
-}
+declare function extend<T extends object = object, S extends T = T>(target: T, ...sources: S[]): T;
 /**
- * 监听回调函数参数
+ * 深度复制（采用JSON解析方式）
+ * @param obj 复制对象
  */
-interface IObservableCallbackParams<NAME, THIS> {
-    /**
-     * 监听动作
-     */
-    name: NAME;
-    /**
-     * 监听源
-     */
-    origin: THIS;
-}
+declare function deepCopyJSON<T>(obj: T): T;
 /**
- * 监听回调函数
- */
-declare type IObservableCallback<T, NAME, THIS, RET = void> = (e: T & IObservableCallbackParams<NAME, THIS>) => RET;
-/**
- * 主动监听类
- */
-declare class Observable<T> {
-    /**
-     * 监听事件池
-     */
-    private _eventMap;
-    /**
-     * 构造主动监听对象
-     */
-    constructor();
-    /**
-     * 绑定监听函数
-     * @param name 监听类型名
-     * @param callback 监听回调函数
-     */
-    on<K extends keyof T>(name: K, callback: IObservableCallback<T[K], K, this>): IObservableHandle;
-    /**
-     * 移除监听函数
-     * @param name 监听类型名
-     * @param callback 监听回调函数（不指定者移除所有）
-     */
-    off<K extends keyof T>(name: K, callback?: IObservableCallback<T[K], K, this>): void;
-    /**
-     * 触发监听函数
-     * @param name 监听函数名
-     * @param data 数据
-     */
-    fire<K extends keyof T>(name: K, data?: T[K]): this;
-    /**
-     * 绑定监听函数（仅监听一次）
-     * @param name 监听类型名
-     * @param callback 监听回调函数
-     */
-    once<K extends keyof T>(name: K, callback: IObservableCallback<T[K], K, this>): void;
-}
+  * 深度复制（采用递归式）
+  * @param obj 复制对象
+  */
+declare function deepCopy<T>(obj: T): T;
 
-export { IObservableCallback, IObservableCallbackParams, IObservableHandle, Observable };
+export { deepCopy, deepCopyJSON, extend };

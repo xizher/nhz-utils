@@ -21,7 +21,7 @@ export default [
     ]
   },
   {
-    input: resolve('src', 'watch', 'index.ts'),
+    input: resolve('src', module, 'index.ts'),
     output: [
       { format: 'esm', file: resolve(module, 'index.d.ts') },
       { format: 'esm', file: resolve(module, 'index.esm.d.ts') },

@@ -1,65 +1,18 @@
 /**
- * 监听句柄
+ * 日期格式化
+ * @param fmt 日期格式
+ * @param date 日期
  */
-interface IObservableHandle {
-    /**
-     * 移除监听
-     */
-    remove(): void;
-}
+declare function formatDate(fmt: string, date?: Date | number | string): string;
 /**
- * 监听回调函数参数
+ * 现金格式化
+ * @param num 数值
  */
-interface IObservableCallbackParams<NAME, THIS> {
-    /**
-     * 监听动作
-     */
-    name: NAME;
-    /**
-     * 监听源
-     */
-    origin: THIS;
-}
+declare function formatCash(num: number | string): string;
 /**
- * 监听回调函数
+ * 转为中文数字
+ * @param num 数值
  */
-declare type IObservableCallback<T, NAME, THIS, RET = void> = (e: T & IObservableCallbackParams<NAME, THIS>) => RET;
-/**
- * 主动监听类
- */
-declare class Observable<T> {
-    /**
-     * 监听事件池
-     */
-    private _eventMap;
-    /**
-     * 构造主动监听对象
-     */
-    constructor();
-    /**
-     * 绑定监听函数
-     * @param name 监听类型名
-     * @param callback 监听回调函数
-     */
-    on<K extends keyof T>(name: K, callback: IObservableCallback<T[K], K, this>): IObservableHandle;
-    /**
-     * 移除监听函数
-     * @param name 监听类型名
-     * @param callback 监听回调函数（不指定者移除所有）
-     */
-    off<K extends keyof T>(name: K, callback?: IObservableCallback<T[K], K, this>): void;
-    /**
-     * 触发监听函数
-     * @param name 监听函数名
-     * @param data 数据
-     */
-    fire<K extends keyof T>(name: K, data?: T[K]): this;
-    /**
-     * 绑定监听函数（仅监听一次）
-     * @param name 监听类型名
-     * @param callback 监听回调函数
-     */
-    once<K extends keyof T>(name: K, callback: IObservableCallback<T[K], K, this>): void;
-}
+declare function formatChineseNumber(num: number | string): string;
 
-export { IObservableCallback, IObservableCallbackParams, IObservableHandle, Observable };
+export { formatCash, formatChineseNumber, formatDate };
