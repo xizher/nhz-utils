@@ -596,6 +596,36 @@ function throttle(fn, wait, options = { leading: true, trailing: true }) {
     return throttled; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
+/**
+ * like setInterval
+ * @param args Parameters<typeof setInterval>
+ * @returns function which can stop the interval handler
+ */
+function makeInterval(...args) {
+    const id = setInterval(...args);
+    return () => clearInterval(id);
+}
+/**
+ * like setTimeout
+ * @param args Parameters<typeof setTimeout>
+ * @returns function which can stop the timeout handler
+ */
+function makeTimeout(...args) {
+    const id = setTimeout(...args);
+    return () => clearTimeout(id);
+}
+/**
+ * like addEventListener
+ * @param target 目标
+ * @param type 监听类型
+ * @param listener 监听器
+ * @returns function which can stop the listerer
+ */
+function makeEventListener(target, type, listener) {
+    target.addEventListener(type, listener);
+    return () => target.removeEventListener(type, listener);
+}
+
 exports.Observable = Observable;
 exports.arr = arr;
 exports.createRandomBool = createRandomBool;
@@ -619,6 +649,9 @@ exports.isObject = isObject;
 exports.isPromise = isPromise;
 exports.isString = isString;
 exports.makeDestructurable = makeDestructurable;
+exports.makeEventListener = makeEventListener;
+exports.makeInterval = makeInterval;
+exports.makeTimeout = makeTimeout;
 exports.sleep = sleep;
 exports.throttle = throttle;
 exports.timestamp = timestamp;
