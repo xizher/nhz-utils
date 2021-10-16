@@ -43,7 +43,7 @@
 
 #### Defined in
 
-[observable.ts:44](https://github.com/xizher/nhz-utils/blob/0dc0666/src/watch/observable.ts#L44)
+[observable.ts:44](https://github.com/xizher/nhz-utils/blob/4645c67/src/watch/observable.ts#L44)
 
 ## Properties
 
@@ -55,7 +55,7 @@
 
 #### Defined in
 
-[observable.ts:39](https://github.com/xizher/nhz-utils/blob/0dc0666/src/watch/observable.ts#L39)
+[observable.ts:39](https://github.com/xizher/nhz-utils/blob/4645c67/src/watch/observable.ts#L39)
 
 ## Methods
 
@@ -84,7 +84,7 @@
 
 #### Defined in
 
-[observable.ts:99](https://github.com/xizher/nhz-utils/blob/0dc0666/src/watch/observable.ts#L99)
+[observable.ts:99](https://github.com/xizher/nhz-utils/blob/4645c67/src/watch/observable.ts#L99)
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 #### Defined in
 
-[observable.ts:74](https://github.com/xizher/nhz-utils/blob/0dc0666/src/watch/observable.ts#L74)
+[observable.ts:74](https://github.com/xizher/nhz-utils/blob/4645c67/src/watch/observable.ts#L74)
 
 ___
 
@@ -142,7 +142,7 @@ ___
 
 #### Defined in
 
-[observable.ts:53](https://github.com/xizher/nhz-utils/blob/0dc0666/src/watch/observable.ts#L53)
+[observable.ts:53](https://github.com/xizher/nhz-utils/blob/4645c67/src/watch/observable.ts#L53)
 
 ___
 
@@ -171,4 +171,4 @@ ___
 
 #### Defined in
 
-[observable.ts:131](https://github.com/xizher/nhz-utils/blob/0dc0666/src/watch/observable.ts#L131)
+[observable.ts:131](https://github.com/xizher/nhz-utils/blob/4645c67/src/watch/observable.ts#L131)

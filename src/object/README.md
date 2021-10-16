@@ -36,7 +36,7 @@ object
 
 #### Defined in
 
-[object.ts:50](https://github.com/xizher/nhz-utils/blob/0dc0666/src/object/object.ts#L50)
+[object.ts:50](https://github.com/xizher/nhz-utils/blob/4645c67/src/object/object.ts#L50)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-[object.ts:42](https://github.com/xizher/nhz-utils/blob/0dc0666/src/object/object.ts#L42)
+[object.ts:42](https://github.com/xizher/nhz-utils/blob/4645c67/src/object/object.ts#L42)
 
 ___
 
@@ -94,4 +94,4 @@ ___
 
 #### Defined in
 
-[object.ts:8](https://github.com/xizher/nhz-utils/blob/0dc0666/src/object/object.ts#L8)
+[object.ts:8](https://github.com/xizher/nhz-utils/blob/4645c67/src/object/object.ts#L8)

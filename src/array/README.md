@@ -7,6 +7,7 @@ array
 ### Functions
 
 - [arr](README.md#arr)
+- [toArray](README.md#toarray)
 
 ## Functions
 
@@ -32,4 +33,30 @@ array
 
 #### Defined in
 
-[array.ts:117](https://github.com/xizher/nhz-utils/blob/0dc0666/src/array/array.ts#L117)
+[array.ts:117](https://github.com/xizher/nhz-utils/blob/4645c67/src/array/array.ts#L117)
+
+___
+
+### toArray
+
+▸ **toArray**<`T`\>(`target`): `T`[]
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `target` | `T` \| `T`[] |
+
+#### Returns
+
+`T`[]
+
+#### Defined in
+
+[array.ts:121](https://github.com/xizher/nhz-utils/blob/4645c67/src/array/array.ts#L121)

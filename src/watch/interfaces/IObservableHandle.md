@@ -24,4 +24,4 @@
 
 #### Defined in
 
-[observable.ts:8](https://github.com/xizher/nhz-utils/blob/0dc0666/src/watch/observable.ts#L8)
+[observable.ts:8](https://github.com/xizher/nhz-utils/blob/4645c67/src/watch/observable.ts#L8)
