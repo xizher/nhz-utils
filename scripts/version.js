@@ -40,7 +40,7 @@ function execCmd (command, strs) {
   }
 
   packageJSON.version = newVersion
-  await writeFile('./package.json', JSON.stringify(packageJSON, null, 2), { encoding: 'utf-8' })
+  await writeFile('./package.json', `${JSON.stringify(packageJSON, null, 2)}\n`, { encoding: 'utf-8' })
 
   // https://stackoverflow.com/questions/43230346/error-spawn-npm-enoent
   await execCmd(/^win/.test(process.platform) ? 'npm.cmd' : 'npm', ['run', 'changelog'])
