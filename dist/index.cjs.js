@@ -520,6 +520,9 @@ class ArrayExtension {
 function arr(target) {
     return new ArrayExtension(target);
 }
+function toArray(target) {
+    return Array.isArray(target) ? target : [target];
+}
 
 /**
   * 防抖
@@ -663,4 +666,5 @@ exports.makeTimeout = makeTimeout;
 exports.sleep = sleep;
 exports.throttle = throttle;
 exports.timestamp = timestamp;
+exports.toArray = toArray;
 exports.toLowerCaseFirstIndex = toLowerCaseFirstIndex;

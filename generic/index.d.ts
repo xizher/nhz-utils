@@ -57,5 +57,9 @@ declare type Nullable<T> = T | null | undefined;
  * Array, or not yet
  */
 declare type Arrayable<T> = T | Array<T>;
+/**
+ * Function
+ */
+declare type Fn<T = void> = () => T;
 
-export { Arrayable, Concrete, IsomorphicDestructurable, NonArray, Nullable, Optional, ReturnPromiseType };
+export { Arrayable, Concrete, Fn, IsomorphicDestructurable, NonArray, Nullable, Optional, ReturnPromiseType };

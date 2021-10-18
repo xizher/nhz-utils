@@ -213,6 +213,7 @@ declare class ArrayExtension<T = any> {
     propToArr(prop: keyof T): T[keyof T][];
 }
 declare function arr<T>(target: T[]): ArrayExtension<T>;
+declare function toArray<T>(target: T | T[]): T[];
 
 /**
   * 防抖
@@ -331,5 +332,9 @@ declare type Nullable<T> = T | null | undefined;
  * Array, or not yet
  */
 declare type Arrayable<T> = T | Array<T>;
+/**
+ * Function
+ */
+declare type Fn<T = void> = () => T;
 
-export { Arrayable, Concrete, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, makeEventListener, makeInterval, makeTimeout, sleep, throttle, timestamp, toLowerCaseFirstIndex };
+export { Arrayable, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, makeEventListener, makeInterval, makeTimeout, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex };

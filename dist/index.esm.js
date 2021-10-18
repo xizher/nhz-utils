@@ -516,6 +516,9 @@ class ArrayExtension {
 function arr(target) {
     return new ArrayExtension(target);
 }
+function toArray(target) {
+    return Array.isArray(target) ? target : [target];
+}
 
 /**
   * 防抖
@@ -630,4 +633,4 @@ function toLowerCaseFirstIndex(str) {
     return str.replace(str[0], str[0].toLowerCase());
 }
 
-export { Observable, arr, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, makeEventListener, makeInterval, makeTimeout, sleep, throttle, timestamp, toLowerCaseFirstIndex };
+export { Observable, arr, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, makeEventListener, makeInterval, makeTimeout, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex };
