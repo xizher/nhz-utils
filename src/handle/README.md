@@ -34,7 +34,7 @@ function which can stop the listerer
 
 #### Defined in
 
-[utils/src/handle/handle.ts:30](https://github.com/xizher/nhz-utils/blob/4645c67/src/handle/handle.ts#L30)
+[utils/src/handle/handle.ts:30](https://github.com/xizher/nhz-utils/blob/b64214c/src/handle/handle.ts#L30)
 
 ___
 
@@ -58,7 +58,7 @@ function which can stop the interval handler
 
 #### Defined in
 
-[utils/src/handle/handle.ts:8](https://github.com/xizher/nhz-utils/blob/4645c67/src/handle/handle.ts#L8)
+[utils/src/handle/handle.ts:8](https://github.com/xizher/nhz-utils/blob/b64214c/src/handle/handle.ts#L8)
 
 ___
 
@@ -82,4 +82,4 @@ function which can stop the timeout handler
 
 #### Defined in
 
-[utils/src/handle/handle.ts:18](https://github.com/xizher/nhz-utils/blob/4645c67/src/handle/handle.ts#L18)
+[utils/src/handle/handle.ts:18](https://github.com/xizher/nhz-utils/blob/b64214c/src/handle/handle.ts#L18)

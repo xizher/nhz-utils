@@ -8,6 +8,7 @@ generic
 
 - [Arrayable](README.md#arrayable)
 - [Concrete](README.md#concrete)
+- [Fn](README.md#fn)
 - [IsomorphicDestructurable](README.md#isomorphicdestructurable)
 - [NonArray](README.md#nonarray)
 - [Nullable](README.md#nullable)
@@ -30,7 +31,7 @@ Array, or not yet
 
 #### Defined in
 
-[generic.ts:79](https://github.com/xizher/nhz-utils/blob/4645c67/src/generic/generic.ts#L79)
+[generic.ts:79](https://github.com/xizher/nhz-utils/blob/b64214c/src/generic/generic.ts#L79)
 
 ___
 
@@ -58,7 +59,33 @@ e?: boolean  // =>     e: boolean
 
 #### Defined in
 
-[generic.ts:15](https://github.com/xizher/nhz-utils/blob/4645c67/src/generic/generic.ts#L15)
+[generic.ts:15](https://github.com/xizher/nhz-utils/blob/b64214c/src/generic/generic.ts#L15)
+
+___
+
+### Fn
+
+Ƭ **Fn**<`T`\>: () => `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `void` |
+
+#### Type declaration
+
+▸ (): `T`
+
+Function
+
+##### Returns
+
+`T`
+
+#### Defined in
+
+[generic.ts:84](https://github.com/xizher/nhz-utils/blob/b64214c/src/generic/generic.ts#L84)
 
 ___
 
@@ -75,7 +102,7 @@ ___
 
 #### Defined in
 
-[generic.ts:61](https://github.com/xizher/nhz-utils/blob/4645c67/src/generic/generic.ts#L61)
+[generic.ts:61](https://github.com/xizher/nhz-utils/blob/b64214c/src/generic/generic.ts#L61)
 
 ___
 
@@ -93,7 +120,7 @@ ___
 
 #### Defined in
 
-[generic.ts:69](https://github.com/xizher/nhz-utils/blob/4645c67/src/generic/generic.ts#L69)
+[generic.ts:69](https://github.com/xizher/nhz-utils/blob/b64214c/src/generic/generic.ts#L69)
 
 ___
 
@@ -111,7 +138,7 @@ Null or whatever
 
 #### Defined in
 
-[generic.ts:74](https://github.com/xizher/nhz-utils/blob/4645c67/src/generic/generic.ts#L74)
+[generic.ts:74](https://github.com/xizher/nhz-utils/blob/b64214c/src/generic/generic.ts#L74)
 
 ___
 
@@ -139,7 +166,7 @@ e: boolean   // =>     e?: boolean
 
 #### Defined in
 
-[generic.ts:34](https://github.com/xizher/nhz-utils/blob/4645c67/src/generic/generic.ts#L34)
+[generic.ts:34](https://github.com/xizher/nhz-utils/blob/b64214c/src/generic/generic.ts#L34)
 
 ___
 
@@ -170,4 +197,4 @@ let t4 : ReturnPromiseType<typeof test2> // number
 
 #### Defined in
 
-[generic.ts:55](https://github.com/xizher/nhz-utils/blob/4645c67/src/generic/generic.ts#L55)
+[generic.ts:55](https://github.com/xizher/nhz-utils/blob/b64214c/src/generic/generic.ts#L55)
