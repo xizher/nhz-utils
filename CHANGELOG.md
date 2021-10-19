@@ -1,3 +1,17 @@
+# [0.2.0](https://github.com/xizher/nhz-utils/compare/v0.1.0...v0.2.0) (2021-10-19)
+
+
+### Features
+
+* **array:** new function toArray() ([4645c67](https://github.com/xizher/nhz-utils/commit/4645c6779eda64a2647ae6b0533e3f4e6ce2ee68))
+* **generic:** 泛型集成模块 close [#14](https://github.com/xizher/nhz-utils/issues/14) ([33701a6](https://github.com/xizher/nhz-utils/commit/33701a60237f654ffe9ee26e106b2352207a8dbb))
+* **generic:** new type -> Fn ([802e6e0](https://github.com/xizher/nhz-utils/commit/802e6e04589e2476ec71fe4db724db396f8fb999))
+* **handle:** 对setInterval Timeout和dom监听提供stop处理器 ([5c848ec](https://github.com/xizher/nhz-utils/commit/5c848ec417341eac4235b0c65e6f1fbd3988863e))
+* **transfor:** toLowerCaseFirstIndex 首字母变小写 ([5de95bc](https://github.com/xizher/nhz-utils/commit/5de95bcd923a0a5631f9f49a4a11e5371422a5f0))
+* **url:** createJSONUrl loadJs loadCss ,close [#15](https://github.com/xizher/nhz-utils/issues/15) ([b64214c](https://github.com/xizher/nhz-utils/commit/b64214c978387cc3bea2ac8426f8dc0233828cfc))
+
+
+
 # [0.1.0](https://github.com/xizher/nhz-utils/compare/v0.0.4...v0.1.0) (2021-10-14)
 
 
