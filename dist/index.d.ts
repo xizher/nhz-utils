@@ -337,4 +337,22 @@ declare type Arrayable<T> = T | Array<T>;
  */
 declare type Fn<T = void> = () => T;
 
-export { Arrayable, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, makeDestructurable, makeEventListener, makeInterval, makeTimeout, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex };
+/**
+  * 加载css
+  * @param cssUrl CSS路径
+  */
+declare function loadCss(cssUrl: string, success?: () => void, error?: (err: string | Event) => void): Promise<void>;
+/**
+  * 加载js
+  * @param jsUrl JS路径
+  * @param success 加载成功完成回调事件
+  * @param error 加载错误回调事件
+  */
+declare function loadJs(jsUrl: string, success?: () => void, error?: (err: string | Event) => void): Promise<void>;
+/**
+ * 创建缓存地址
+ * @param json JSON
+ */
+declare function createJSONUrl(json: object): [string, () => void];
+
+export { Arrayable, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeTimeout, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex };

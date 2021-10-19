@@ -24,6 +24,7 @@
     "build:handle": "rollup --config build/build.handle.js && npm run build",
     "build:transfor": "rollup --config build/build.transfor.js && npm run build",
     "build:generic": "rollup --config build/build.generic.js && npm run build",
+    "build:url": "rollup --config build/build.url.js && npm run build",
     "build": "rollup --config build/index.js"
   },
   "repository": {
