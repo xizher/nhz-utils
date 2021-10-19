@@ -14,6 +14,9 @@ export default [
       { format: 'esm', file: resolve(module, 'index.js') },
       { format: 'cjs', file: resolve(module, 'index.cjs.js') },
     ],
+    external:[
+      '../is'
+    ],
     plugins: [
       typescript(),
       commonjs(),

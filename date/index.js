@@ -1,12 +1,4 @@
-/**
- * 判断变量是否为 object 类型
- * @param val 变量
- */
-/**
- * 判断变量是否为 null 或者 undefined
- * @param val 变量
- */
-const isNullable = (val) => typeof val === 'undefined' || val === null;
+import { isNullable } from '../is';
 
 /**
  * 获取当前时间戳

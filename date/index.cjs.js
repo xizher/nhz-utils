@@ -2,15 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-/**
- * 判断变量是否为 object 类型
- * @param val 变量
- */
-/**
- * 判断变量是否为 null 或者 undefined
- * @param val 变量
- */
-const isNullable = (val) => typeof val === 'undefined' || val === null;
+var is = require('../is');
 
 /**
  * 获取当前时间戳
@@ -23,7 +15,7 @@ function timestamp() {
  * @param date 日期，默认当前日期
  */
 function getMonth(date) {
-    if (isNullable(date)) {
+    if (is.isNullable(date)) {
         return new Date().getMonth() + 1;
     }
     if (date instanceof Date) {

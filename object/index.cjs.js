@@ -2,11 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-/**
- * 判断变量是否为 object 类型
- * @param val 变量
- */
-const isObject = (val) => toString.call(val) === '[object Object]';
+var is = require('../is');
 
 /**
  * 对象扩展
@@ -36,7 +32,7 @@ function extend(target, ...sources) {
     }
     return extend(target, ...sources);
     function isMergableObject(item) {
-        return isObject(item) && !Array.isArray(item);
+        return is.isObject(item) && !Array.isArray(item);
     }
 }
 /**

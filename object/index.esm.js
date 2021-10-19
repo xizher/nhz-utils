@@ -1,8 +1,4 @@
-/**
- * 判断变量是否为 object 类型
- * @param val 变量
- */
-const isObject = (val) => toString.call(val) === '[object Object]';
+import { isObject } from '../is';
 
 /**
  * 对象扩展

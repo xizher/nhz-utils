@@ -2,15 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-/**
- * 判断变量是否为 object 类型
- * @param val 变量
- */
-/**
- * 判断变量是否为 null 或者 undefined
- * @param val 变量
- */
-const isNullable = (val) => typeof val === 'undefined' || val === null;
+var is = require('../is');
 
 /**
  * 日期格式化
@@ -19,7 +11,7 @@ const isNullable = (val) => typeof val === 'undefined' || val === null;
  */
 function formatDate(fmt, date) {
     let _date;
-    if (isNullable(date)) {
+    if (is.isNullable(date)) {
         _date = new Date();
     }
     else if (date instanceof Date) {
