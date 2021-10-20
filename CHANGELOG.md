@@ -1,3 +1,12 @@
+## [0.2.3](https://github.com/xizher/nhz-utils/compare/v0.2.1...v0.2.3) (2021-10-20)
+
+
+### Bug Fixes
+
+* typo main file ([07c1db8](https://github.com/xizher/nhz-utils/commit/07c1db8be57c9a2cc00255e75eba8dde93851a2d))
+
+
+
 ## [0.2.1](https://github.com/xizher/nhz-utils/compare/v0.2.0...v0.2.1) (2021-10-20)
 
 
