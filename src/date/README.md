@@ -31,7 +31,7 @@ date
 
 #### Defined in
 
-[date.ts:14](https://github.com/xizher/nhz-utils/blob/b64214c/src/date/date.ts#L14)
+[date.ts:14](https://github.com/xizher/nhz-utils/blob/5b11f4a/src/date/date.ts#L14)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[date.ts:33](https://github.com/xizher/nhz-utils/blob/b64214c/src/date/date.ts#L33)
+[date.ts:33](https://github.com/xizher/nhz-utils/blob/5b11f4a/src/date/date.ts#L33)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[date.ts:41](https://github.com/xizher/nhz-utils/blob/b64214c/src/date/date.ts#L41)
+[date.ts:41](https://github.com/xizher/nhz-utils/blob/5b11f4a/src/date/date.ts#L41)
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 #### Defined in
 
-[date.ts:6](https://github.com/xizher/nhz-utils/blob/b64214c/src/date/date.ts#L6)
+[date.ts:6](https://github.com/xizher/nhz-utils/blob/5b11f4a/src/date/date.ts#L6)

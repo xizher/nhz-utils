@@ -8,6 +8,7 @@ handle
 
 - [makeEventListener](README.md#makeeventlistener)
 - [makeInterval](README.md#makeinterval)
+- [makeObservable](README.md#makeobservable)
 - [makeTimeout](README.md#maketimeout)
 
 ## Functions
@@ -34,7 +35,7 @@ function which can stop the listerer
 
 #### Defined in
 
-[utils/src/handle/handle.ts:30](https://github.com/xizher/nhz-utils/blob/b64214c/src/handle/handle.ts#L30)
+[utils/src/handle/handle.ts:32](https://github.com/xizher/nhz-utils/blob/5b11f4a/src/handle/handle.ts#L32)
 
 ___
 
@@ -58,7 +59,38 @@ function which can stop the interval handler
 
 #### Defined in
 
-[utils/src/handle/handle.ts:8](https://github.com/xizher/nhz-utils/blob/b64214c/src/handle/handle.ts#L8)
+[utils/src/handle/handle.ts:10](https://github.com/xizher/nhz-utils/blob/5b11f4a/src/handle/handle.ts#L10)
+
+___
+
+### makeObservable
+
+▸ **makeObservable**<`T`, `K`\>(`target`, `type`, `listener`): `Stop`
+
+like observable.on
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` |
+| `K` | extends `string` \| `number` \| `symbol` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `target` | `Observable`<`T`\> | 目标 |
+| `type` | `K` | 监听类型 |
+| `listener` | `IObservableCallback`<`T`[`K`], `K`, `any`, `void`\> | 监听器 |
+
+#### Returns
+
+`Stop`
+
+#### Defined in
+
+[utils/src/handle/handle.ts:43](https://github.com/xizher/nhz-utils/blob/5b11f4a/src/handle/handle.ts#L43)
 
 ___
 
@@ -82,4 +114,4 @@ function which can stop the timeout handler
 
 #### Defined in
 
-[utils/src/handle/handle.ts:18](https://github.com/xizher/nhz-utils/blob/b64214c/src/handle/handle.ts#L18)
+[utils/src/handle/handle.ts:20](https://github.com/xizher/nhz-utils/blob/5b11f4a/src/handle/handle.ts#L20)
