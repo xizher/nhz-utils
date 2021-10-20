@@ -628,6 +628,16 @@ function makeEventListener(target, type, listener) {
     target.addEventListener(type, listener);
     return () => target.removeEventListener(type, listener);
 }
+/**
+ * like observable.on
+ * @param target 目标
+ * @param type 监听类型
+ * @param listener 监听器
+ */
+function makeObservable(target, type, listener) {
+    const { remove } = target.on(type, listener);
+    return () => remove();
+}
 
 /**
  * 首字母变小写
@@ -717,6 +727,7 @@ exports.loadJs = loadJs;
 exports.makeDestructurable = makeDestructurable;
 exports.makeEventListener = makeEventListener;
 exports.makeInterval = makeInterval;
+exports.makeObservable = makeObservable;
 exports.makeTimeout = makeTimeout;
 exports.sleep = sleep;
 exports.throttle = throttle;

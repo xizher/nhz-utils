@@ -266,6 +266,13 @@ declare function makeTimeout(...args: Parameters<typeof setTimeout>): Stop;
  * @returns function which can stop the listerer
  */
 declare function makeEventListener(target: Element | Document, type: string, listener: EventListenerOrEventListenerObject): Stop;
+/**
+ * like observable.on
+ * @param target 目标
+ * @param type 监听类型
+ * @param listener 监听器
+ */
+declare function makeObservable<T, K extends keyof T>(target: Observable<T>, type: K, listener: IObservableCallback<T[K], K, any>): Stop;
 
 /**
  * 首字母变小写
@@ -355,4 +362,4 @@ declare function loadJs(jsUrl: string, success?: () => void, error?: (err: strin
  */
 declare function createJSONUrl(json: object): [string, () => void];
 
-export { Arrayable, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeTimeout, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex };
+export { Arrayable, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex };

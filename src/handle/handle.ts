@@ -1,3 +1,5 @@
+import { Observable, IObservableCallback } from '../watch'
+
 type Stop = () => void
 
 /**
@@ -30,4 +32,15 @@ export function makeTimeout (...args: Parameters<typeof setTimeout>) : Stop {
 export function makeEventListener (target: Element | Document, type: string, listener: EventListenerOrEventListenerObject) : Stop {
   target.addEventListener(type, listener)
   return () => target.removeEventListener(type, listener)
+}
+
+/**
+ * like observable.on
+ * @param target 目标
+ * @param type 监听类型
+ * @param listener 监听器
+ */
+export function makeObservable<T, K extends keyof T> (target: Observable<T>, type: K, listener: IObservableCallback<T[K], K, any>) : Stop { // eslint-disable-line
+  const { remove } = target.on(type, listener)
+  return () => remove()
 }

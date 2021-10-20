@@ -624,6 +624,16 @@ function makeEventListener(target, type, listener) {
     target.addEventListener(type, listener);
     return () => target.removeEventListener(type, listener);
 }
+/**
+ * like observable.on
+ * @param target 目标
+ * @param type 监听类型
+ * @param listener 监听器
+ */
+function makeObservable(target, type, listener) {
+    const { remove } = target.on(type, listener);
+    return () => remove();
+}
 
 /**
  * 首字母变小写
@@ -685,4 +695,4 @@ function createJSONUrl(json) {
     return [url, () => URL.revokeObjectURL(url)];
 }
 
-export { Observable, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeTimeout, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex };
+export { Observable, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex };
