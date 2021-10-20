@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/xizher/nhz-utils/compare/v0.2.0...v0.2.1) (2021-10-20)
+
+
+### Features
+
+* **handle, makeObservable:** new func  close [#16](https://github.com/xizher/nhz-utils/issues/16) ([5b11f4a](https://github.com/xizher/nhz-utils/commit/5b11f4ab5f6b67f1ce495a8ceff66839b9778451))
+
+
+
 # [0.2.0](https://github.com/xizher/nhz-utils/compare/v0.1.0...v0.2.0) (2021-10-19)
 
 
