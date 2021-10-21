@@ -18,6 +18,7 @@ function execCmd (command, strs) {
     const isDir = (await stat(path)).isDirectory()
     if (isDir) {
       await execCmd(/^win/.test(process.platform) ? 'npx.cmd' : 'npx', ['typedoc', '--out', `src/${name}`, `src/${name}/index.ts`, '--cleanOutputDir', 'false', '--githubPages', 'false', '--readme', 'none', '--name', name])
+      console.log('readme:', name)
     }
   })
 })()
