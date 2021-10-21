@@ -1,3 +1,6 @@
+import { AxiosInstance, AxiosRequestHeaders, AxiosRequestConfig } from 'axios';
+export { default as axios } from 'axios';
+
 /**
  * 判断变量是否为 object 类型
  * @param val 变量
@@ -362,4 +365,24 @@ declare function loadJs(jsUrl: string, success?: () => void, error?: (err: strin
  */
 declare function createJSONUrl(json: object): [string, () => void];
 
-export { Arrayable, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex };
+declare class AjaxAxios {
+    private static _defaultAxiosInstance;
+    private static setDefaultAxiosInstance;
+    private _axiosInstance;
+    private _url;
+    private _data;
+    private _params;
+    private _header;
+    private _config;
+    constructor(axiosInstance?: AxiosInstance);
+    mountGet<T>(): Promise<T>;
+    mountPost<T>(): Promise<T>;
+    setUrl(url: string): this;
+    setData(data: object): this;
+    setParams(params: object): this;
+    setHeader(header: AxiosRequestHeaders): this;
+    setConfig(config: AxiosRequestConfig): this;
+}
+declare function createAxios(instance?: AxiosInstance): AjaxAxios;
+
+export { AjaxAxios, Arrayable, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createAxios, createJSONUrl, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex };
