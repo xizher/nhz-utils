@@ -1,3 +1,12 @@
+## [0.2.4](https://github.com/xizher/nhz-utils/compare/v0.2.3...v0.2.4) (2021-10-21)
+
+
+### Features
+
+* **ajax:** ajax模块集成 createAxios ([6bd46fd](https://github.com/xizher/nhz-utils/commit/6bd46fd37b33f46254d875bdf8adeafdd6b8f0ee))
+
+
+
 ## [0.2.3](https://github.com/xizher/nhz-utils/compare/v0.2.1...v0.2.3) (2021-10-20)
 
 

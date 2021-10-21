@@ -1,6 +1,6 @@
 {
   "name": "@nhz/utils",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "【@nhz/utils】Collection of common JavaScript / TypeScript utils 🌏",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
