@@ -1,6 +1,3 @@
-import axios from 'axios';
-export { default as axios } from 'axios';
-
 /**
  * 判断变量是否为 object 类型
  * @param val 变量
@@ -698,60 +695,4 @@ function createJSONUrl(json) {
     return [url, () => URL.revokeObjectURL(url)];
 }
 
-class AjaxAxios {
-    static _defaultAxiosInstance = axios.create();
-    static setDefaultAxiosInstance(instance) {
-        this._defaultAxiosInstance = instance;
-    }
-    _axiosInstance;
-    _url;
-    _data;
-    _params;
-    _header;
-    _config;
-    constructor(axiosInstance) {
-        this._axiosInstance = axiosInstance ?? AjaxAxios._defaultAxiosInstance;
-    }
-    async mountGet() {
-        const config = extend({}, this._config, {
-            headers: this._header,
-            params: this._params,
-            data: this._data,
-        });
-        const res = await this._axiosInstance.get(this._url, config);
-        return res.data;
-    }
-    async mountPost() {
-        const config = extend({}, this._config, {
-            headers: this._header,
-            params: this._params,
-        });
-        const res = await this._axiosInstance.post(this._url, this._data, config);
-        return res.data;
-    }
-    setUrl(url) {
-        this._url = url;
-        return this;
-    }
-    setData(data) {
-        this._data = data;
-        return this;
-    }
-    setParams(params) {
-        this._params = params;
-        return this;
-    }
-    setHeader(header) {
-        this._header = header;
-        return this;
-    }
-    setConfig(config) {
-        this._config = config;
-        return this;
-    }
-}
-function createAxios(instance) {
-    return new AjaxAxios(instance);
-}
-
-export { AjaxAxios, Observable, arr, createAxios, createJSONUrl, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex };
+export { Observable, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex };

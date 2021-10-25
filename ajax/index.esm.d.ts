@@ -1,5 +1,4 @@
 import { AxiosInstance, AxiosRequestHeaders, AxiosRequestConfig } from 'axios';
-export { default as axios } from 'axios';
 
 declare class AjaxAxios {
     private static _defaultAxiosInstance;

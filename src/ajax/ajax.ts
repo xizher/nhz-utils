@@ -1,8 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosRequestHeaders } from 'axios'
 import { extend } from '../object'
 
-export { axios }
-
 export class AjaxAxios {
 
   private static _defaultAxiosInstance : AxiosInstance = axios.create()

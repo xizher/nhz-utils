@@ -1,5 +1,4 @@
 import axios from 'axios';
-export { default as axios } from 'axios';
 import { extend } from '../object';
 
 class AjaxAxios {

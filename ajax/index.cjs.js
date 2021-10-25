@@ -65,9 +65,5 @@ function createAxios(instance) {
     return new AjaxAxios(instance);
 }
 
-Object.defineProperty(exports, 'axios', {
-  enumerable: true,
-  get: function () { return axios__default["default"]; }
-});
 exports.AjaxAxios = AjaxAxios;
 exports.createAxios = createAxios;

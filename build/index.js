@@ -11,9 +11,6 @@ export default [
       { format: 'esm', file: resolve('dist', 'index.esm.js') },
       { format: 'cjs', file: resolve('dist', 'index.cjs.js') },
     ],
-    external:[
-      'axios',
-    ],
     plugins: [
       typescript(),
       commonjs(),
