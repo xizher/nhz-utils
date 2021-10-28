@@ -34,7 +34,7 @@ val is boolean
 
 #### Defined in
 
-[is.ts:11](https://github.com/xizher/nhz-utils/blob/5b11f4a/src/is/is.ts#L11)
+[is.ts:11](https://github.com/xizher/nhz-utils/blob/55c3ef3/src/is/is.ts#L11)
 
 ___
 
@@ -62,7 +62,7 @@ val is T
 
 #### Defined in
 
-[is.ts:18](https://github.com/xizher/nhz-utils/blob/5b11f4a/src/is/is.ts#L18)
+[is.ts:18](https://github.com/xizher/nhz-utils/blob/55c3ef3/src/is/is.ts#L18)
 
 ___
 
@@ -84,7 +84,7 @@ val is undefined \| null
 
 #### Defined in
 
-[is.ts:36](https://github.com/xizher/nhz-utils/blob/5b11f4a/src/is/is.ts#L36)
+[is.ts:36](https://github.com/xizher/nhz-utils/blob/55c3ef3/src/is/is.ts#L36)
 
 ___
 
@@ -106,7 +106,7 @@ val is number
 
 #### Defined in
 
-[is.ts:24](https://github.com/xizher/nhz-utils/blob/5b11f4a/src/is/is.ts#L24)
+[is.ts:24](https://github.com/xizher/nhz-utils/blob/55c3ef3/src/is/is.ts#L24)
 
 ___
 
@@ -128,7 +128,7 @@ val is object
 
 #### Defined in
 
-[is.ts:5](https://github.com/xizher/nhz-utils/blob/5b11f4a/src/is/is.ts#L5)
+[is.ts:5](https://github.com/xizher/nhz-utils/blob/55c3ef3/src/is/is.ts#L5)
 
 ___
 
@@ -157,7 +157,7 @@ val is Promise<unknown\>
 
 #### Defined in
 
-[is.ts:50](https://github.com/xizher/nhz-utils/blob/5b11f4a/src/is/is.ts#L50)
+[is.ts:50](https://github.com/xizher/nhz-utils/blob/55c3ef3/src/is/is.ts#L50)
 
 ___
 
@@ -179,4 +179,4 @@ val is string
 
 #### Defined in
 
-[is.ts:30](https://github.com/xizher/nhz-utils/blob/5b11f4a/src/is/is.ts#L30)
+[is.ts:30](https://github.com/xizher/nhz-utils/blob/55c3ef3/src/is/is.ts#L30)
