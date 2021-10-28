@@ -695,4 +695,32 @@ function createJSONUrl(json) {
     return [url, () => URL.revokeObjectURL(url)];
 }
 
-export { Observable, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex };
+/**
+ * 读取文件内容
+ * @param file 文件
+ * @param encoding 编码
+ */
+function readFileAsText(file, encoding) {
+    return new Promise((resolve, reject) => {
+        const fileReader = new FileReader();
+        fileReader.onload = e => {
+            const content = e.target?.result ?? '';
+            resolve(String(content));
+        };
+        fileReader.onerror = err => {
+            reject(err);
+        };
+        fileReader.readAsText(file, encoding);
+    });
+}
+/**
+ * 读取文件内容并转为JSON对象
+ * @param file 文件
+ * @param encoding 编码
+ */
+async function readFileAsJSON(file, encoding) {
+    const content = await readFileAsText(file);
+    return JSON.parse(content);
+}
+
+export { Observable, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, readFileAsJSON, readFileAsText, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex };

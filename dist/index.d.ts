@@ -362,4 +362,17 @@ declare function loadJs(jsUrl: string, success?: () => void, error?: (err: strin
  */
 declare function createJSONUrl(json: object): [string, () => void];
 
-export { Arrayable, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex };
+/**
+ * 读取文件内容
+ * @param file 文件
+ * @param encoding 编码
+ */
+declare function readFileAsText(file: File, encoding?: string): Promise<string>;
+/**
+ * 读取文件内容并转为JSON对象
+ * @param file 文件
+ * @param encoding 编码
+ */
+declare function readFileAsJSON<T>(file: File, encoding?: string): Promise<T>;
+
+export { Arrayable, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, readFileAsJSON, readFileAsText, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex };

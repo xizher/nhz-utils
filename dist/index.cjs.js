@@ -699,6 +699,34 @@ function createJSONUrl(json) {
     return [url, () => URL.revokeObjectURL(url)];
 }
 
+/**
+ * 读取文件内容
+ * @param file 文件
+ * @param encoding 编码
+ */
+function readFileAsText(file, encoding) {
+    return new Promise((resolve, reject) => {
+        const fileReader = new FileReader();
+        fileReader.onload = e => {
+            const content = e.target?.result ?? '';
+            resolve(String(content));
+        };
+        fileReader.onerror = err => {
+            reject(err);
+        };
+        fileReader.readAsText(file, encoding);
+    });
+}
+/**
+ * 读取文件内容并转为JSON对象
+ * @param file 文件
+ * @param encoding 编码
+ */
+async function readFileAsJSON(file, encoding) {
+    const content = await readFileAsText(file);
+    return JSON.parse(content);
+}
+
 exports.Observable = Observable;
 exports.arr = arr;
 exports.createJSONUrl = createJSONUrl;
@@ -729,6 +757,8 @@ exports.makeEventListener = makeEventListener;
 exports.makeInterval = makeInterval;
 exports.makeObservable = makeObservable;
 exports.makeTimeout = makeTimeout;
+exports.readFileAsJSON = readFileAsJSON;
+exports.readFileAsText = readFileAsText;
 exports.sleep = sleep;
 exports.throttle = throttle;
 exports.timestamp = timestamp;
