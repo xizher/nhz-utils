@@ -1,3 +1,7 @@
+## [0.2.5](https://github.com/xizher/nhz-utils/compare/v0.2.4...v0.2.5) (2021-10-28)
+
+
+
 ## [0.2.4](https://github.com/xizher/nhz-utils/compare/v0.2.3...v0.2.4) (2021-10-21)
 
 
