@@ -727,6 +727,11 @@ async function readFileAsJSON(file, encoding) {
     return JSON.parse(content);
 }
 
+function warn(msg, ...args) {
+    const warnArgs = [`[FSSGIS]: ${msg}`, ...args];
+    console.warn(...warnArgs);
+}
+
 exports.Observable = Observable;
 exports.arr = arr;
 exports.createJSONUrl = createJSONUrl;
@@ -764,3 +769,4 @@ exports.throttle = throttle;
 exports.timestamp = timestamp;
 exports.toArray = toArray;
 exports.toLowerCaseFirstIndex = toLowerCaseFirstIndex;
+exports.warn = warn;
