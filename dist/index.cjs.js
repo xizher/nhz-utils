@@ -691,12 +691,21 @@ function loadJs(jsUrl, success, error) {
     });
 }
 /**
+ * 创建缓存路径
+ * @param blobPart Blob
+ * @param options 配置项
+ */
+function createUrlFromBlob(blobPart, options) {
+    const url = URL.createObjectURL(new Blob([blobPart], options));
+    const destory = URL.revokeObjectURL(url);
+    return makeDestructurable({ url, destory }, [url, destory]);
+}
+/**
  * 创建缓存地址
  * @param json JSON
  */
 function createJSONUrl(json) {
-    const url = URL.createObjectURL(new Blob([JSON.stringify(json)], { type: 'application/json' }));
-    return [url, () => URL.revokeObjectURL(url)];
+    return createUrlFromBlob(JSON.stringify(json), { type: 'application/json' });
 }
 
 /**
@@ -738,6 +747,7 @@ exports.createJSONUrl = createJSONUrl;
 exports.createRandomBool = createRandomBool;
 exports.createRandomInt = createRandomInt;
 exports.createUid = createUid;
+exports.createUrlFromBlob = createUrlFromBlob;
 exports.debounce = debounce;
 exports.deepCopy = deepCopy;
 exports.deepCopyJSON = deepCopyJSON;

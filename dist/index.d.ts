@@ -357,10 +357,22 @@ declare function loadCss(cssUrl: string, success?: () => void, error?: (err: str
   */
 declare function loadJs(jsUrl: string, success?: () => void, error?: (err: string | Event) => void): Promise<void>;
 /**
+ * 创建缓存路径
+ * @param blobPart Blob
+ * @param options 配置项
+ */
+declare function createUrlFromBlob(blobPart: BlobPart, options?: BlobPropertyBag): {
+    readonly url: string;
+    readonly destory: void;
+} & readonly [string, void];
+/**
  * 创建缓存地址
  * @param json JSON
  */
-declare function createJSONUrl(json: object): [string, () => void];
+declare function createJSONUrl(json: object): {
+    readonly url: string;
+    readonly destory: void;
+} & readonly [string, void];
 
 /**
  * 读取文件内容
@@ -377,4 +389,4 @@ declare function readFileAsJSON<T>(file: File, encoding?: string): Promise<T>;
 
 declare function warn(msg: string, ...args: unknown[]): void;
 
-export { Arrayable, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, readFileAsJSON, readFileAsText, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn };
+export { Arrayable, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, readFileAsJSON, readFileAsText, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn };
