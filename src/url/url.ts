@@ -52,7 +52,7 @@ export function loadJs (jsUrl: string, success?: () => void, error?: (err: strin
  */
 export function createUrlFromBlob (blobPart: BlobPart, options?: BlobPropertyBag) {
   const url = URL.createObjectURL(new Blob([blobPart], options))
-  const destory = URL.revokeObjectURL(url)
+  const destory = () => URL.revokeObjectURL(url)
   return makeDestructurable(
     { url, destory } as const,
     [url, destory] as const,

@@ -363,16 +363,16 @@ declare function loadJs(jsUrl: string, success?: () => void, error?: (err: strin
  */
 declare function createUrlFromBlob(blobPart: BlobPart, options?: BlobPropertyBag): {
     readonly url: string;
-    readonly destory: void;
-} & readonly [string, void];
+    readonly destory: () => void;
+} & readonly [string, () => void];
 /**
  * 创建缓存地址
  * @param json JSON
  */
 declare function createJSONUrl(json: object): {
     readonly url: string;
-    readonly destory: void;
-} & readonly [string, void];
+    readonly destory: () => void;
+} & readonly [string, () => void];
 
 /**
  * 读取文件内容
