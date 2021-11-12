@@ -420,7 +420,16 @@ function deepCopy(obj) {
  */
 function filterObjectIncludeKeys(obj, keys) {
     return Object.fromEntries(Object.entries(obj)
-        .filter(([key]) => this.tableFields_.includes(key)));
+        .filter(([key]) => keys.includes(key)));
+}
+/**
+ * 对象成员过滤
+ * @param obj 对象
+ * @param keys 剔除的键
+ */
+function filterObjectExcludeKeys(obj, keys) {
+    return Object.fromEntries(Object.entries(obj)
+        .filter(([key]) => !keys.includes(key)));
 }
 
 class ArrayExtension {
@@ -746,4 +755,4 @@ function warn(msg, ...args) {
     console.warn(...warnArgs);
 }
 
-export { Observable, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectIncludeKeys, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, readFileAsJSON, readFileAsText, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn };
+export { Observable, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectExcludeKeys, filterObjectIncludeKeys, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, readFileAsJSON, readFileAsText, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn };
