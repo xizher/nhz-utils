@@ -417,6 +417,15 @@ function deepCopy(obj) {
     }
     return newObj;
 }
+/**
+ * 对象成员过滤
+ * @param obj 对象
+ * @param keys 保留的键
+ */
+function filterObjectIncludeKeys(obj, keys) {
+    return Object.fromEntries(Object.entries(obj)
+        .filter(([key]) => this.tableFields_.includes(key)));
+}
 
 class ArrayExtension {
     static _instance;
@@ -752,6 +761,7 @@ exports.debounce = debounce;
 exports.deepCopy = deepCopy;
 exports.deepCopyJSON = deepCopyJSON;
 exports.extend = extend;
+exports.filterObjectIncludeKeys = filterObjectIncludeKeys;
 exports.formatCash = formatCash;
 exports.formatChineseNumber = formatChineseNumber;
 exports.formatDate = formatDate;

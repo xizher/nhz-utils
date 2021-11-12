@@ -192,6 +192,12 @@ declare function deepCopyJSON<T>(obj: T): T;
   * @param obj 复制对象
   */
 declare function deepCopy<T>(obj: T): T;
+/**
+ * 对象成员过滤
+ * @param obj 对象
+ * @param keys 保留的键
+ */
+declare function filterObjectIncludeKeys<T extends object, K extends keyof T>(obj: T, keys: K[]): Pick<T, K>;
 
 declare class ArrayExtension<T = any> {
     private static _instance;
@@ -389,4 +395,4 @@ declare function readFileAsJSON<T>(file: File, encoding?: string): Promise<T>;
 
 declare function warn(msg: string, ...args: unknown[]): void;
 
-export { Arrayable, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, readFileAsJSON, readFileAsText, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn };
+export { Arrayable, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectIncludeKeys, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, readFileAsJSON, readFileAsText, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn };

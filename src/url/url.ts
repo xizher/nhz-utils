@@ -1,4 +1,4 @@
-import { makeDestructurable } from '..'
+import { makeDestructurable } from '../return'
 import { toArray } from '../array'
 
 /**

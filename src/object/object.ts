@@ -58,3 +58,15 @@ export function deepCopy <T> (obj: T) : T {
   }
   return newObj as T
 }
+
+/**
+ * 对象成员过滤
+ * @param obj 对象
+ * @param keys 保留的键
+ */
+export function filterObjectIncludeKeys <T extends object, K extends keyof T> (obj: T, keys: K[]) : Pick<T, K> {
+  return Object.fromEntries(
+    Object.entries(obj)
+      .filter(([key]) => this.tableFields_.includes(key))
+  ) as Pick<T, K>
+}
