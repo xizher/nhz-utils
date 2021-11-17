@@ -29,7 +29,7 @@ export function makeTimeout (...args: Parameters<typeof setTimeout>) : Stop {
  * @param listener 监听器
  * @returns function which can stop the listerer
  */
-export function makeEventListener (target: Element | Document, type: string, listener: EventListenerOrEventListenerObject) : Stop {
+export function makeEventListener (target: Element | Document | Window, type: string, listener: EventListenerOrEventListenerObject) : Stop {
   target.addEventListener(type, listener)
   return () => target.removeEventListener(type, listener)
 }

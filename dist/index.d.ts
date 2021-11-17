@@ -277,7 +277,7 @@ declare function makeTimeout(...args: Parameters<typeof setTimeout>): Stop;
  * @param listener 监听器
  * @returns function which can stop the listerer
  */
-declare function makeEventListener(target: Element | Document, type: string, listener: EventListenerOrEventListenerObject): Stop;
+declare function makeEventListener(target: Element | Document | Window, type: string, listener: EventListenerOrEventListenerObject): Stop;
 /**
  * like observable.on
  * @param target 目标
