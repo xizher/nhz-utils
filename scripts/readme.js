@@ -13,14 +13,14 @@ function execCmd (command, strs) {
 
 ;(async function () {
   const names = await readdir('src')
-  names.forEach(async name => {
+  for (const name of names) {
     const path = `src/${name}`
     const isDir = (await stat(path)).isDirectory()
     if (isDir) {
       await execCmd(/^win/.test(process.platform) ? 'npx.cmd' : 'npx', ['typedoc', '--out', `src/${name}`, `src/${name}/index.ts`, '--cleanOutputDir', 'false', '--githubPages', 'false', '--readme', 'none', '--name', name])
       console.log('readme:', name)
     }
-  })
+  }
 })()
 
 // npx typedoc --out src/is src/is/is.ts --cleanOutputDir false --githubPages false --readme none --name is
