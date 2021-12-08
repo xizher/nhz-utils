@@ -1,3 +1,21 @@
+# [1.0.0](https://github.com/xizher/nhz-utils/compare/v0.2.5...v1.0.0) (2021-12-08)
+
+
+### Bug Fixes
+
+* **url, createUrlFromBlob:** code error ([51856c2](https://github.com/xizher/nhz-utils/commit/51856c2284948322eff17910566ca9aa42404df7))
+
+
+### Features
+
+* **log:** new function for warn() ([6d905e7](https://github.com/xizher/nhz-utils/commit/6d905e7a5e3bd0463e9cc14d2cd05e2dfcbd3ce3))
+* **makeEventListener:** 优化传参类型 ([be9fdcb](https://github.com/xizher/nhz-utils/commit/be9fdcb1588bc8ad8806413faacea3a99f8f97bc))
+* **object:** filterObjectExcludeKeys 对象成员过滤 ([dcebdbf](https://github.com/xizher/nhz-utils/commit/dcebdbf320a6589e44fbe74cf8604e0068a83b45))
+* **object:** filterObjectIncludeKeys 对象成员过滤 ([824144e](https://github.com/xizher/nhz-utils/commit/824144efb92c7c66fabf9fbc7801eb21942abcd0))
+* **url:** createUrlFromBlob() 创建缓存路径方法集成 ([0d80c0c](https://github.com/xizher/nhz-utils/commit/0d80c0c6a8294b75772a2d4287759930296467b2))
+
+
+
 ## [0.2.5](https://github.com/xizher/nhz-utils/compare/v0.2.4...v0.2.5) (2021-10-28)
 
 
