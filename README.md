@@ -88,4 +88,7 @@ Please make sure to update tests as appropriate.
 | object/`filterObjectIncludeKeys()`   | 对象成员过滤         | object/`filterObjectExcludeKeys()` | 对象成员过滤           |
 | random/`createRandomBool()`          | 创建随机bool值       | random/`createRandomInt()`         | 创建随机整数           |
 | random/`createUid()`                 | 创建随机Uid          | random/`getArrayItemRandom()`      | 随机获取数组一集合     |
-
+| return/`makeDestructurable()`        | Destructuring with object or array | throttle-debounce/`debounce()` | 防抖         |
+| throttle-debounce/`throttle()`       | 节流                 | transfor/`toLowerCaseFirstIndex()` | 首字母变小写          |
+| url/`loadCss()`                      | 加载css              | url/`loadJs()`                     | 记载js               |
+| url/`createUrlFromBlob()`            | 创建缓存路径          | url/`createJSONUrl()`              | 创建缓存地址          |

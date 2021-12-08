@@ -23,7 +23,7 @@ like addEventListener
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `target` | `Element` \| `Document` | 目标 |
+| `target` | `Element` \| `Document` \| `Window` | 目标 |
 | `type` | `string` | 监听类型 |
 | `listener` | `EventListenerOrEventListenerObject` | 监听器 |
 
@@ -35,7 +35,7 @@ function which can stop the listerer
 
 #### Defined in
 
-[packages/utils/src/handle/handle.ts:32](https://github.com/xizher/nhz-utils/blob/55c3ef3/src/handle/handle.ts#L32)
+[packages/utils/src/handle/handle.ts:32](https://github.com/xizher/nhz-utils/blob/cf515b8/src/handle/handle.ts#L32)
 
 ___
 
@@ -59,7 +59,7 @@ function which can stop the interval handler
 
 #### Defined in
 
-[packages/utils/src/handle/handle.ts:10](https://github.com/xizher/nhz-utils/blob/55c3ef3/src/handle/handle.ts#L10)
+[packages/utils/src/handle/handle.ts:10](https://github.com/xizher/nhz-utils/blob/cf515b8/src/handle/handle.ts#L10)
 
 ___
 
@@ -90,7 +90,7 @@ like observable.on
 
 #### Defined in
 
-[packages/utils/src/handle/handle.ts:43](https://github.com/xizher/nhz-utils/blob/55c3ef3/src/handle/handle.ts#L43)
+[packages/utils/src/handle/handle.ts:43](https://github.com/xizher/nhz-utils/blob/cf515b8/src/handle/handle.ts#L43)
 
 ___
 
@@ -114,4 +114,4 @@ function which can stop the timeout handler
 
 #### Defined in
 
-[packages/utils/src/handle/handle.ts:20](https://github.com/xizher/nhz-utils/blob/55c3ef3/src/handle/handle.ts#L20)
+[packages/utils/src/handle/handle.ts:20](https://github.com/xizher/nhz-utils/blob/cf515b8/src/handle/handle.ts#L20)

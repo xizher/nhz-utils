@@ -7,6 +7,7 @@ url
 ### Functions
 
 - [createJSONUrl](README.md#createjsonurl)
+- [createUrlFromBlob](README.md#createurlfromblob)
 - [loadCss](README.md#loadcss)
 - [loadJs](README.md#loadjs)
 
@@ -14,7 +15,7 @@ url
 
 ### createJSONUrl
 
-▸ **createJSONUrl**(`json`): [`string`, () => `void`]
+▸ **createJSONUrl**(`json`): { `destory`: () => `void` ; `url`: `string`  } & readonly [`string`, () => `void`]
 
 创建缓存地址
 
@@ -26,11 +27,34 @@ url
 
 #### Returns
 
-[`string`, () => `void`]
+{ `destory`: () => `void` ; `url`: `string`  } & readonly [`string`, () => `void`]
 
 #### Defined in
 
-[url.ts:50](https://github.com/xizher/nhz-utils/blob/55c3ef3/src/url/url.ts#L50)
+[url.ts:66](https://github.com/xizher/nhz-utils/blob/cf515b8/src/url/url.ts#L66)
+
+___
+
+### createUrlFromBlob
+
+▸ **createUrlFromBlob**(`blobPart`, `options?`): { `destory`: () => `void` ; `url`: `string`  } & readonly [`string`, () => `void`]
+
+创建缓存路径
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `blobPart` | `BlobPart` | Blob |
+| `options?` | `BlobPropertyBag` | 配置项 |
+
+#### Returns
+
+{ `destory`: () => `void` ; `url`: `string`  } & readonly [`string`, () => `void`]
+
+#### Defined in
+
+[url.ts:53](https://github.com/xizher/nhz-utils/blob/cf515b8/src/url/url.ts#L53)
 
 ___
 
@@ -54,7 +78,7 @@ ___
 
 #### Defined in
 
-[url.ts:6](https://github.com/xizher/nhz-utils/blob/55c3ef3/src/url/url.ts#L6)
+[url.ts:8](https://github.com/xizher/nhz-utils/blob/cf515b8/src/url/url.ts#L8)
 
 ___
 
@@ -78,4 +102,4 @@ ___
 
 #### Defined in
 
-[url.ts:30](https://github.com/xizher/nhz-utils/blob/55c3ef3/src/url/url.ts#L30)
+[url.ts:32](https://github.com/xizher/nhz-utils/blob/cf515b8/src/url/url.ts#L32)
