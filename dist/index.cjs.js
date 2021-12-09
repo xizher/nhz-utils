@@ -759,6 +759,13 @@ function warn(msg, ...args) {
     console.warn(...warnArgs);
 }
 
+function Log(msg) {
+    return (target, key, descriptor) => {
+        console.log(msg, target, key, descriptor);
+    };
+}
+
+exports.Log = Log;
 exports.Observable = Observable;
 exports.arr = arr;
 exports.createJSONUrl = createJSONUrl;
