@@ -64,6 +64,17 @@ function makeDestructurable(obj, arr) {
     });
     return clone;
 }
+function whenReture(intervalTime, fn, target = (ret) => ret) {
+    return new Promise(resolve => {
+        const handleId = setInterval(() => {
+            const ret = fn();
+            if (target(ret)) {
+                clearInterval(handleId);
+                resolve(ret);
+            }
+        }, intervalTime);
+    });
+}
 
 /**
  * 获取当前时间戳
@@ -761,4 +772,4 @@ function Log(msg) {
     };
 }
 
-export { Log, Observable, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectExcludeKeys, filterObjectIncludeKeys, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, readFileAsJSON, readFileAsText, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn };
+export { Log, Observable, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectExcludeKeys, filterObjectIncludeKeys, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makeTimeout, readFileAsJSON, readFileAsText, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn, whenReture };

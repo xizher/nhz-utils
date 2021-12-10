@@ -1,3 +1,5 @@
+import { Fn } from ".."
+
 /**
  * Destructuring with object or array
  * @param obj Destructuring with object
@@ -25,4 +27,16 @@ export function makeDestructurable <
   })
 
   return clone as T & A
+}
+
+export function whenReture<T> (intervalTime: number, fn: Fn<T>, target: Function = (ret: any) => ret) : Promise<NonNullable<T>> {
+  return new Promise(resolve => {
+    const handleId = setInterval(() => {
+      const ret = fn()
+      if (target(ret)) {
+        clearInterval(handleId)
+        resolve(ret as NonNullable<T>)
+      }
+    }, intervalTime)
+  })
 }

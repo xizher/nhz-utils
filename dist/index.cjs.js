@@ -68,6 +68,17 @@ function makeDestructurable(obj, arr) {
     });
     return clone;
 }
+function whenReture(intervalTime, fn, target = (ret) => ret) {
+    return new Promise(resolve => {
+        const handleId = setInterval(() => {
+            const ret = fn();
+            if (target(ret)) {
+                clearInterval(handleId);
+                resolve(ret);
+            }
+        }, intervalTime);
+    });
+}
 
 /**
  * 获取当前时间戳
@@ -807,3 +818,4 @@ exports.timestamp = timestamp;
 exports.toArray = toArray;
 exports.toLowerCaseFirstIndex = toLowerCaseFirstIndex;
 exports.warn = warn;
+exports.whenReture = whenReture;
