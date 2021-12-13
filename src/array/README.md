@@ -33,7 +33,7 @@ array
 
 #### Defined in
 
-[array.ts:117](https://github.com/xizher/nhz-utils/blob/cf515b8/src/array/array.ts#L117)
+[array.ts:117](https://github.com/xizher/nhz-utils/blob/f583067/src/array/array.ts#L117)
 
 ___
 
@@ -59,4 +59,4 @@ ___
 
 #### Defined in
 
-[array.ts:121](https://github.com/xizher/nhz-utils/blob/cf515b8/src/array/array.ts#L121)
+[array.ts:121](https://github.com/xizher/nhz-utils/blob/f583067/src/array/array.ts#L121)

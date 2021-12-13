@@ -27,4 +27,4 @@ log
 
 #### Defined in
 
-[log.ts:1](https://github.com/xizher/nhz-utils/blob/cf515b8/src/log/log.ts#L1)
+[log.ts:1](https://github.com/xizher/nhz-utils/blob/f583067/src/log/log.ts#L1)

@@ -30,7 +30,7 @@ format
 
 #### Defined in
 
-[format.ts:45](https://github.com/xizher/nhz-utils/blob/cf515b8/src/format/format.ts#L45)
+[format.ts:45](https://github.com/xizher/nhz-utils/blob/f583067/src/format/format.ts#L45)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[format.ts:56](https://github.com/xizher/nhz-utils/blob/cf515b8/src/format/format.ts#L56)
+[format.ts:56](https://github.com/xizher/nhz-utils/blob/f583067/src/format/format.ts#L56)
 
 ___
 
@@ -75,4 +75,4 @@ ___
 
 #### Defined in
 
-[format.ts:8](https://github.com/xizher/nhz-utils/blob/cf515b8/src/format/format.ts#L8)
+[format.ts:8](https://github.com/xizher/nhz-utils/blob/f583067/src/format/format.ts#L8)

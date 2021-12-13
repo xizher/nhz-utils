@@ -38,7 +38,7 @@ object
 
 #### Defined in
 
-[object.ts:50](https://github.com/xizher/nhz-utils/blob/cf515b8/src/object/object.ts#L50)
+[object.ts:50](https://github.com/xizher/nhz-utils/blob/f583067/src/object/object.ts#L50)
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 #### Defined in
 
-[object.ts:42](https://github.com/xizher/nhz-utils/blob/cf515b8/src/object/object.ts#L42)
+[object.ts:42](https://github.com/xizher/nhz-utils/blob/f583067/src/object/object.ts#L42)
 
 ___
 
@@ -80,8 +80,8 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends `object``object` |
-| `S` | extends `object``T` |
+| `T` | extends `object` = `object` |
+| `S` | extends `object` = `T` |
 
 #### Parameters
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-[object.ts:8](https://github.com/xizher/nhz-utils/blob/cf515b8/src/object/object.ts#L8)
+[object.ts:8](https://github.com/xizher/nhz-utils/blob/f583067/src/object/object.ts#L8)
 
 ___
 
@@ -126,7 +126,7 @@ ___
 
 #### Defined in
 
-[object.ts:79](https://github.com/xizher/nhz-utils/blob/cf515b8/src/object/object.ts#L79)
+[object.ts:79](https://github.com/xizher/nhz-utils/blob/f583067/src/object/object.ts#L79)
 
 ___
 
@@ -156,4 +156,4 @@ ___
 
 #### Defined in
 
-[object.ts:67](https://github.com/xizher/nhz-utils/blob/cf515b8/src/object/object.ts#L67)
+[object.ts:67](https://github.com/xizher/nhz-utils/blob/f583067/src/object/object.ts#L67)

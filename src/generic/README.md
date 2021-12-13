@@ -31,7 +31,7 @@ Array, or not yet
 
 #### Defined in
 
-[generic.ts:79](https://github.com/xizher/nhz-utils/blob/cf515b8/src/generic/generic.ts#L79)
+[generic.ts:79](https://github.com/xizher/nhz-utils/blob/f583067/src/generic/generic.ts#L79)
 
 ___
 
@@ -59,7 +59,7 @@ e?: boolean  // =>     e: boolean
 
 #### Defined in
 
-[generic.ts:15](https://github.com/xizher/nhz-utils/blob/cf515b8/src/generic/generic.ts#L15)
+[generic.ts:15](https://github.com/xizher/nhz-utils/blob/f583067/src/generic/generic.ts#L15)
 
 ___
 
@@ -85,7 +85,7 @@ Function
 
 #### Defined in
 
-[generic.ts:84](https://github.com/xizher/nhz-utils/blob/cf515b8/src/generic/generic.ts#L84)
+[generic.ts:84](https://github.com/xizher/nhz-utils/blob/f583067/src/generic/generic.ts#L84)
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 #### Defined in
 
-[generic.ts:61](https://github.com/xizher/nhz-utils/blob/cf515b8/src/generic/generic.ts#L61)
+[generic.ts:61](https://github.com/xizher/nhz-utils/blob/f583067/src/generic/generic.ts#L61)
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 #### Defined in
 
-[generic.ts:69](https://github.com/xizher/nhz-utils/blob/cf515b8/src/generic/generic.ts#L69)
+[generic.ts:69](https://github.com/xizher/nhz-utils/blob/f583067/src/generic/generic.ts#L69)
 
 ___
 
@@ -138,7 +138,7 @@ Null or whatever
 
 #### Defined in
 
-[generic.ts:74](https://github.com/xizher/nhz-utils/blob/cf515b8/src/generic/generic.ts#L74)
+[generic.ts:74](https://github.com/xizher/nhz-utils/blob/f583067/src/generic/generic.ts#L74)
 
 ___
 
@@ -166,7 +166,7 @@ e: boolean   // =>     e?: boolean
 
 #### Defined in
 
-[generic.ts:34](https://github.com/xizher/nhz-utils/blob/cf515b8/src/generic/generic.ts#L34)
+[generic.ts:34](https://github.com/xizher/nhz-utils/blob/f583067/src/generic/generic.ts#L34)
 
 ___
 
@@ -197,4 +197,4 @@ let t4 : ReturnPromiseType<typeof test2> // number
 
 #### Defined in
 
-[generic.ts:55](https://github.com/xizher/nhz-utils/blob/cf515b8/src/generic/generic.ts#L55)
+[generic.ts:55](https://github.com/xizher/nhz-utils/blob/f583067/src/generic/generic.ts#L55)

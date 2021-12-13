@@ -7,6 +7,7 @@ return
 ### Functions
 
 - [makeDestructurable](README.md#makedestructurable)
+- [whenReture](README.md#whenreture)
 
 ## Functions
 
@@ -38,4 +39,32 @@ Destructuring with object or array
 
 #### Defined in
 
-[return.ts:7](https://github.com/xizher/nhz-utils/blob/cf515b8/src/return/return.ts#L7)
+[return.ts:9](https://github.com/xizher/nhz-utils/blob/f583067/src/return/return.ts#L9)
+
+___
+
+### whenReture
+
+▸ **whenReture**<`T`\>(`intervalTime`, `fn`, `target?`): `Promise`<`NonNullable`<`T`\>\>
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `intervalTime` | `number` |
+| `fn` | `Fn`<`T`\> |
+| `target` | `Function` |
+
+#### Returns
+
+`Promise`<`NonNullable`<`T`\>\>
+
+#### Defined in
+
+[return.ts:32](https://github.com/xizher/nhz-utils/blob/f583067/src/return/return.ts#L32)
