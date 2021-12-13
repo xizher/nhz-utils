@@ -36,7 +36,7 @@ file
 
 #### Defined in
 
-[file.ts:24](https://github.com/xizher/nhz-utils/blob/cf515b8/src/file/file.ts#L24)
+[file.ts:24](https://github.com/xizher/nhz-utils/blob/f583067/src/file/file.ts#L24)
 
 ___
 
@@ -59,4 +59,4 @@ ___
 
 #### Defined in
 
-[file.ts:6](https://github.com/xizher/nhz-utils/blob/cf515b8/src/file/file.ts#L6)
+[file.ts:6](https://github.com/xizher/nhz-utils/blob/f583067/src/file/file.ts#L6)

@@ -43,7 +43,7 @@ throttle-debounce
 
 #### Defined in
 
-[throttle-debounce.ts:15](https://github.com/xizher/nhz-utils/blob/cf515b8/src/throttle-debounce/throttle-debounce.ts#L15)
+[throttle-debounce.ts:15](https://github.com/xizher/nhz-utils/blob/f583067/src/throttle-debounce/throttle-debounce.ts#L15)
 
 ___
 
@@ -77,4 +77,4 @@ ___
 
 #### Defined in
 
-[throttle-debounce.ts:45](https://github.com/xizher/nhz-utils/blob/cf515b8/src/throttle-debounce/throttle-debounce.ts#L45)
+[throttle-debounce.ts:45](https://github.com/xizher/nhz-utils/blob/f583067/src/throttle-debounce/throttle-debounce.ts#L45)
