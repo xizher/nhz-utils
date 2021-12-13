@@ -776,6 +776,42 @@ function Log(msg) {
     };
 }
 
+class AsyncFunctionCache {
+    static _instance;
+    _cache = new Map(); // eslint-disable-line
+    constructor() {
+        if (AsyncFunctionCache._instance) {
+            return AsyncFunctionCache._instance;
+        }
+        AsyncFunctionCache._instance = this;
+        return this;
+    }
+    remove(fn) {
+        if (fn) {
+            this._cache.delete(fn);
+        }
+        else {
+            this._cache.clear();
+        }
+        return this;
+    }
+    async withCache(fn) {
+        const cache = this._cache.get(fn);
+        if (cache) {
+            return deepCopyJSON(cache);
+        }
+        const ret = await fn();
+        this._cache.set(fn, ret);
+        return ret;
+    }
+}
+function withCache(fn) {
+    return new AsyncFunctionCache().withCache(fn);
+}
+function removeCache(fn) {
+    return new AsyncFunctionCache().remove(fn);
+}
+
 exports.Log = Log;
 exports.Observable = Observable;
 exports.arr = arr;
@@ -812,6 +848,7 @@ exports.makeObservable = makeObservable;
 exports.makeTimeout = makeTimeout;
 exports.readFileAsJSON = readFileAsJSON;
 exports.readFileAsText = readFileAsText;
+exports.removeCache = removeCache;
 exports.sleep = sleep;
 exports.throttle = throttle;
 exports.timestamp = timestamp;
@@ -819,3 +856,4 @@ exports.toArray = toArray;
 exports.toLowerCaseFirstIndex = toLowerCaseFirstIndex;
 exports.warn = warn;
 exports.whenReture = whenReture;
+exports.withCache = withCache;
