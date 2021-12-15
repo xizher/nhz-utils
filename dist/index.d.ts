@@ -251,9 +251,10 @@ declare function debounce<T extends Function>(fn: T, wait: number, immediate?: b
   * @param wait 间隔毫秒数
   * @param options 配置项
   */
-declare function throttle<T extends Function>(fn: T, wait: number, options?: {
-    leading?: boolean;
-    trailing?: boolean;
+declare function throttle<T extends Function>(fn: T, wait: number, { // eslint-disable-line
+leading, trailing }?: {
+    leading?: boolean | undefined;
+    trailing?: boolean | undefined;
 }): (T & {
     cancle(): void;
 });

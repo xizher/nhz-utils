@@ -42,14 +42,14 @@ export function debounce <T extends Function> (fn: T, wait: number, immediate: b
   * @param options 配置项
   */
 /* istanbul ignore next */
-export function throttle<T extends Function> (fn: T, wait: number, options: { // eslint-disable-line
-  leading?: boolean
-  trailing?: boolean
-} = { leading: true, trailing: true }) : (T & { cancle() : void }) {
+export function throttle<T extends Function> (fn: T, wait: number, { // eslint-disable-line
+  leading = true,
+  trailing = true
+} = {}) : (T & { cancle() : void }) {
   let handle, previous = 0
   const throttled = function () {
     const now = Date.now()
-    if (!previous && !options.leading) {
+    if (!previous && !leading) {
       previous = now
     }
     const remaining = wait - (now - previous)
@@ -60,9 +60,9 @@ export function throttle<T extends Function> (fn: T, wait: number, options: { //
       }
       previous = now
         fn(...arguments) // eslint-disable-line
-    } else if (!handle && options.trailing) {
+    } else if (!handle && trailing) {
       handle = setTimeout(() => {
-        previous = !options.leading ? 0 : Date.now()
+        previous = !leading ? 0 : Date.now()
         handle = null
           fn(...arguments) // eslint-disable-line
       }, remaining)

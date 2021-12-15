@@ -596,11 +596,12 @@ function debounce(fn, wait, immediate = false) {
   * @param options 配置项
   */
 /* istanbul ignore next */
-function throttle(fn, wait, options = { leading: true, trailing: true }) {
+function throttle(fn, wait, { // eslint-disable-line
+leading = true, trailing = true } = {}) {
     let handle, previous = 0;
     const throttled = function () {
         const now = Date.now();
-        if (!previous && !options.leading) {
+        if (!previous && !leading) {
             previous = now;
         }
         const remaining = wait - (now - previous);
@@ -612,9 +613,9 @@ function throttle(fn, wait, options = { leading: true, trailing: true }) {
             previous = now;
             fn(...arguments); // eslint-disable-line
         }
-        else if (!handle && options.trailing) {
+        else if (!handle && trailing) {
             handle = setTimeout(() => {
-                previous = !options.leading ? 0 : Date.now();
+                previous = !leading ? 0 : Date.now();
                 handle = null;
                 fn(...arguments); // eslint-disable-line
             }, remaining);
