@@ -668,6 +668,16 @@ function makeObservable(target, type, listener) {
     const { remove } = target.on(type, listener);
     return () => remove();
 }
+function makePromiseInterval(handler, interval = 0) {
+    let destory = false;
+    (async () => {
+        while (!destory) {
+            await handler();
+            await sleep(interval);
+        }
+    })();
+    return () => destory = true;
+}
 
 /**
  * 首字母变小写
@@ -846,6 +856,7 @@ exports.makeDestructurable = makeDestructurable;
 exports.makeEventListener = makeEventListener;
 exports.makeInterval = makeInterval;
 exports.makeObservable = makeObservable;
+exports.makePromiseInterval = makePromiseInterval;
 exports.makeTimeout = makeTimeout;
 exports.readFileAsJSON = readFileAsJSON;
 exports.readFileAsText = readFileAsText;

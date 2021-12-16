@@ -1,3 +1,4 @@
+import { sleep } from '../date'
 import { Observable, IObservableCallback } from '../watch'
 
 type Stop = () => void
@@ -43,4 +44,15 @@ export function makeEventListener (target: Element | Document | Window, type: st
 export function makeObservable<T, K extends keyof T> (target: Observable<T>, type: K, listener: IObservableCallback<T[K], K, any>) : Stop { // eslint-disable-line
   const { remove } = target.on(type, listener)
   return () => remove()
+}
+
+export function makePromiseInterval (handler: (...args: any[]) => Promise<any>, interval = 0) { // eslint-disable-line
+  let destory = false
+  ;(async () => {
+    while (!destory) {
+      await handler()
+      await sleep(interval)
+    }
+  })()
+  return () => destory = true
 }
