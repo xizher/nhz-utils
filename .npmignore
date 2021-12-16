@@ -1,6 +1,7 @@
 build
 src
 scripts
+docs
 
 # from .gitignore
 
