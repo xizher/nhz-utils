@@ -47,6 +47,12 @@ declare const isPromise: (val: unknown) => val is Promise<unknown>;
  * @link https://antfu.me/posts/destructuring-with-object-or-array
  */
 declare function makeDestructurable<T extends Record<string, unknown>, A extends readonly unknown[]>(obj: T, arr: A): T & A;
+/**
+ * 当函数返回指定结果时触发
+ * @param intervalTime 间隔时间
+ * @param fn 函数
+ * @param target 函数返回结果验证
+ */
 declare function whenReture<T>(intervalTime: number, fn: Fn<T>, target?: Function): Promise<NonNullable<T>>;
 
 /**
@@ -206,26 +212,103 @@ declare function filterObjectIncludeKeys<T extends object, K extends keyof T>(ob
  */
 declare function filterObjectExcludeKeys<T extends object, K extends keyof T>(obj: T, keys: K[]): Omit<T, K>;
 
+/**
+ * 数组扩展装饰器（单例）
+ */
 declare class ArrayExtension<T = any> {
+    /**
+     * 唯一实例
+     */
     private static _instance;
+    /**
+     * 目标数组
+     */
     private _target;
+    /**
+     * 目标数组
+     */
     get $(): T[];
+    /**
+     * 数组的最后一位
+     */
     get last(): T;
+    /**
+     * 构造数组扩展装饰器
+     * @param target 目标数组
+     */
     constructor(target: T[]);
+    /**
+     * 插入
+     * @param index 位置索引
+     * @param value 值
+     */
     insert(index: number, value: T): this;
+    /**
+     * 移除
+     * @param index 位置索引
+     */
     removeIndex(index: number): this;
+    /**
+     * 移除
+     * @param index 位置索引
+     * @param returnRemoveItem 是否范围移除值
+     */
     removeIndex(index: number, returnRemoveItem?: true): T;
+    /**
+     * 清空数组
+     */
     clear(): this;
+    /**
+     * 重置数组
+     * @param items 值
+     */
     reset(...items: T[]): this;
+    /**
+     * 移除值
+     * @param value 值
+     * @param removeMany 是否移除多个
+     */
     removeValue(value: T, removeMany?: boolean): this;
+    /**
+     * 唯一值处理
+     */
     unique(): this;
+    /**
+     * 获取唯一值
+     */
     getUnique(): T[];
+    /**
+     * 数组对比
+     * @param anotherArr 数组
+     */
     equal<K>(anotherArr: K[]): boolean;
+    /**
+     * 对象数组寻找值（首个）
+     * @param propName 属性名
+     * @param propValue 属性值
+     */
     findItem(propName: keyof T, propValue: T[keyof T]): T | undefined;
+    /**
+     * 对象数组寻找值（所有）
+     * @param propName 属性名
+     * @param propValue 属性值
+     */
     findItems(propName: keyof T, propValue: T[keyof T]): T[];
+    /**
+     * 对象数组属性值提取
+     * @param prop 属性名
+     */
     propToArr(prop: keyof T): T[keyof T][];
 }
+/**
+ * 构造数组装饰器
+ * @param target 目标数组
+ */
 declare function arr<T>(target: T[]): ArrayExtension<T>;
+/**
+ * 转数组
+ * @param target 目标
+ */
 declare function toArray<T>(target: T | T[]): T[];
 
 /**
@@ -287,6 +370,11 @@ declare function makeEventListener(target: Element | Document | Window, type: st
  * @param listener 监听器
  */
 declare function makeObservable<T, K extends keyof T>(target: Observable<T>, type: K, listener: IObservableCallback<T[K], K, any>): Stop;
+/**
+ * like setInterval
+ * @param handler 异步函数
+ * @param interval 间隔时间戳
+ */
 declare function makePromiseInterval(handler: (...args: any[]) => Promise<any>, interval?: number): () => boolean;
 
 /**
@@ -402,19 +490,59 @@ declare function readFileAsText(file: File, encoding?: string): Promise<string>;
  */
 declare function readFileAsJSON<T>(file: File, encoding?: string): Promise<T>;
 
+/**
+ * 警告
+ * @param msg 信息
+ * @param args 参数集
+ */
 declare function warn(msg: string, ...args: unknown[]): void;
 
+/**
+ * 装饰器：日志
+ * @param msg 信息
+ */
 declare function Log(msg: string): MethodDecorator;
 
-declare type AsyncFunction = Fn<Promise<any>>;
+/**
+ * 异步函数类型
+ */
+declare type AsyncFunction<T = any> = Fn<Promise<T>>;
+/**
+ * 异步函数结果缓存器（单例）
+ */
 declare class AsyncFunctionCache {
+    /**
+     * 唯一实例
+     */
     private static _instance;
+    /**
+     * 缓存区
+     */
     private _cache;
+    /**
+     * 构造异步函数结果缓存器
+     */
     constructor();
+    /**
+     * 移除缓存
+     * @param fn 异步函数
+     */
     remove(fn?: AsyncFunction): this;
+    /**
+     * 缓存异步结果
+     * @param fn 缓存函数
+     */
     withCache<T extends AsyncFunction>(fn: T): Promise<ReturnPromiseType<T>>;
 }
+/**
+ * 缓存异步结果
+ * @param fn 缓存函数
+ */
 declare function withCache<T extends AsyncFunction>(fn: T): Promise<ReturnPromiseType<T>>;
+/**
+ * 移除缓存
+ * @param fn 缓存函数
+ */
 declare function removeCache(fn?: AsyncFunction): AsyncFunctionCache;
 
-export { Arrayable, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, Log, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectExcludeKeys, filterObjectIncludeKeys, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makePromiseInterval, makeTimeout, readFileAsJSON, readFileAsText, removeCache, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn, whenReture, withCache };
+export { ArrayExtension, Arrayable, AsyncFunction, AsyncFunctionCache, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, Log, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectExcludeKeys, filterObjectIncludeKeys, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makePromiseInterval, makeTimeout, readFileAsJSON, readFileAsText, removeCache, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn, whenReture, withCache };

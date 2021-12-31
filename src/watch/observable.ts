@@ -11,7 +11,7 @@ export interface IObservableHandle {
 /**
  * 监听回调函数参数
  */
- export interface IObservableCallbackParams <NAME, THIS> {
+export interface IObservableCallbackParams <NAME, THIS> {
   /**
    * 监听动作
    */
@@ -26,7 +26,7 @@ export interface IObservableHandle {
  * 监听回调函数
  */
 export type IObservableCallback<T, NAME, THIS, RET =
-  void> = (e: T & IObservableCallbackParams<NAME, THIS>) => RET
+void> = (e: T & IObservableCallbackParams<NAME, THIS>) => RET
 
 /**
  * 主动监听类
@@ -50,7 +50,7 @@ export class Observable <T> {
    * @param name 监听类型名
    * @param callback 监听回调函数
    */
-   public on <K extends keyof T> (
+  public on <K extends keyof T> (
     name: K,
     callback: IObservableCallback<T[K], K, this>
   ) : IObservableHandle {

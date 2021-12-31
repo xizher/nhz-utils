@@ -43,7 +43,7 @@ throttle-debounce
 
 #### Defined in
 
-[throttle-debounce.ts:15](https://github.com/xizher/nhz-utils/blob/f583067/src/throttle-debounce/throttle-debounce.ts#L15)
+[throttle-debounce.ts:15](https://github.com/xizher/nhz-utils/blob/042334f/src/throttle-debounce/throttle-debounce.ts#L15)
 
 ___
 
@@ -68,8 +68,8 @@ ___
 | `fn` | `T` | 函数 |
 | `wait` | `number` | 间隔毫秒数 |
 | `options` | `Object` | 配置项 |
-| `options.leading?` | `boolean` | - |
-| `options.trailing?` | `boolean` | - |
+| `options.leading` | `undefined` \| `boolean` | - |
+| `options.trailing` | `undefined` \| `boolean` | - |
 
 #### Returns
 
@@ -77,4 +77,4 @@ ___
 
 #### Defined in
 
-[throttle-debounce.ts:45](https://github.com/xizher/nhz-utils/blob/f583067/src/throttle-debounce/throttle-debounce.ts#L45)
+[throttle-debounce.ts:45](https://github.com/xizher/nhz-utils/blob/042334f/src/throttle-debounce/throttle-debounce.ts#L45)

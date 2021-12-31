@@ -29,6 +29,12 @@ export function makeDestructurable <
   return clone as T & A
 }
 
+/**
+ * 当函数返回指定结果时触发
+ * @param intervalTime 间隔时间
+ * @param fn 函数
+ * @param target 函数返回结果验证
+ */
 export function whenReture<T> (intervalTime: number, fn: Fn<T>, target: Function = (ret: any) => ret) : Promise<NonNullable<T>> {
   return new Promise(resolve => {
     const handleId = setInterval(() => {

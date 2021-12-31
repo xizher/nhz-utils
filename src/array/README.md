@@ -4,6 +4,10 @@ array
 
 ## Table of contents
 
+### Classes
+
+- [ArrayExtension](classes/ArrayExtension.md)
+
 ### Functions
 
 - [arr](README.md#arr)
@@ -13,7 +17,9 @@ array
 
 ### arr
 
-▸ **arr**<`T`\>(`target`): `ArrayExtension`<`T`\>
+▸ **arr**<`T`\>(`target`): [`ArrayExtension`](classes/ArrayExtension.md)<`T`\>
+
+构造数组装饰器
 
 #### Type parameters
 
@@ -23,17 +29,17 @@ array
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `target` | `T`[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `target` | `T`[] | 目标数组 |
 
 #### Returns
 
-`ArrayExtension`<`T`\>
+[`ArrayExtension`](classes/ArrayExtension.md)<`T`\>
 
 #### Defined in
 
-[array.ts:117](https://github.com/xizher/nhz-utils/blob/f583067/src/array/array.ts#L117)
+[array.ts:196](https://github.com/xizher/nhz-utils/blob/042334f/src/array/array.ts#L196)
 
 ___
 
@@ -41,6 +47,8 @@ ___
 
 ▸ **toArray**<`T`\>(`target`): `T`[]
 
+转数组
+
 #### Type parameters
 
 | Name |
@@ -49,9 +57,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `target` | `T` \| `T`[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `target` | `T` \| `T`[] | 目标 |
 
 #### Returns
 
@@ -59,4 +67,4 @@ ___
 
 #### Defined in
 
-[array.ts:121](https://github.com/xizher/nhz-utils/blob/f583067/src/array/array.ts#L121)
+[array.ts:204](https://github.com/xizher/nhz-utils/blob/042334f/src/array/array.ts#L204)

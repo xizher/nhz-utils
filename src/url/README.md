@@ -31,7 +31,7 @@ url
 
 #### Defined in
 
-[url.ts:66](https://github.com/xizher/nhz-utils/blob/f583067/src/url/url.ts#L66)
+[url.ts:66](https://github.com/xizher/nhz-utils/blob/042334f/src/url/url.ts#L66)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[url.ts:53](https://github.com/xizher/nhz-utils/blob/f583067/src/url/url.ts#L53)
+[url.ts:53](https://github.com/xizher/nhz-utils/blob/042334f/src/url/url.ts#L53)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-[url.ts:8](https://github.com/xizher/nhz-utils/blob/f583067/src/url/url.ts#L8)
+[url.ts:8](https://github.com/xizher/nhz-utils/blob/042334f/src/url/url.ts#L8)
 
 ___
 
@@ -102,4 +102,4 @@ ___
 
 #### Defined in
 
-[url.ts:32](https://github.com/xizher/nhz-utils/blob/f583067/src/url/url.ts#L32)
+[url.ts:32](https://github.com/xizher/nhz-utils/blob/042334f/src/url/url.ts#L32)

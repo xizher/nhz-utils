@@ -28,4 +28,4 @@ transfor
 
 #### Defined in
 
-[transfor.ts:6](https://github.com/xizher/nhz-utils/blob/f583067/src/transfor/transfor.ts#L6)
+[transfor.ts:6](https://github.com/xizher/nhz-utils/blob/042334f/src/transfor/transfor.ts#L6)

@@ -39,13 +39,15 @@ Destructuring with object or array
 
 #### Defined in
 
-[return.ts:9](https://github.com/xizher/nhz-utils/blob/f583067/src/return/return.ts#L9)
+[return.ts:9](https://github.com/xizher/nhz-utils/blob/042334f/src/return/return.ts#L9)
 
 ___
 
 ### whenReture
 
 ▸ **whenReture**<`T`\>(`intervalTime`, `fn`, `target?`): `Promise`<`NonNullable`<`T`\>\>
+
+当函数返回指定结果时触发
 
 #### Type parameters
 
@@ -55,11 +57,11 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `intervalTime` | `number` |
-| `fn` | `Fn`<`T`\> |
-| `target` | `Function` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `intervalTime` | `number` | 间隔时间 |
+| `fn` | `Fn`<`T`\> | 函数 |
+| `target` | `Function` | 函数返回结果验证 |
 
 #### Returns
 
@@ -67,4 +69,4 @@ ___
 
 #### Defined in
 
-[return.ts:32](https://github.com/xizher/nhz-utils/blob/f583067/src/return/return.ts#L32)
+[return.ts:38](https://github.com/xizher/nhz-utils/blob/042334f/src/return/return.ts#L38)

@@ -68,6 +68,12 @@ function makeDestructurable(obj, arr) {
     });
     return clone;
 }
+/**
+ * 当函数返回指定结果时触发
+ * @param intervalTime 间隔时间
+ * @param fn 函数
+ * @param target 函数返回结果验证
+ */
 function whenReture(intervalTime, fn, target = (ret) => ret) {
     return new Promise(resolve => {
         const handleId = setInterval(() => {
@@ -447,15 +453,34 @@ function filterObjectExcludeKeys(obj, keys) {
         .filter(([key]) => !keys.includes(key)));
 }
 
+/**
+ * 数组扩展装饰器（单例）
+ */
 class ArrayExtension {
+    /**
+     * 唯一实例
+     */
     static _instance;
+    /**
+     * 目标数组
+     */
     _target;
+    /**
+     * 目标数组
+     */
     get $() {
         return this._target;
     }
+    /**
+     * 数组的最后一位
+     */
     get last() {
         return this._target[this._target.length - 1];
     }
+    /**
+     * 构造数组扩展装饰器
+     * @param target 目标数组
+     */
     constructor(target) {
         if (ArrayExtension._instance) {
             ArrayExtension._instance._target = target;
@@ -465,10 +490,20 @@ class ArrayExtension {
         ArrayExtension._instance = this;
         return this;
     }
+    /**
+     * 插入
+     * @param index 位置索引
+     * @param value 值
+     */
     insert(index, value) {
         this._target.splice(index, 0, value);
         return this;
     }
+    /**
+     * 移除
+     * @param index 位置索引
+     * @param returnRemoveItem 是否范围移除值
+     */
     removeIndex(index, returnRemoveItem) {
         const value = this._target[index];
         this._target.splice(index, 1);
@@ -477,14 +512,26 @@ class ArrayExtension {
         }
         return this;
     }
+    /**
+     * 清空数组
+     */
     clear() {
         this._target.splice(0, this._target.length);
         return this;
     }
+    /**
+     * 重置数组
+     * @param items 值
+     */
     reset(...items) {
         this._target.splice(0, this._target.length, ...items);
         return this;
     }
+    /**
+     * 移除值
+     * @param value 值
+     * @param removeMany 是否移除多个
+     */
     removeValue(value, removeMany = false) {
         if (removeMany) {
             for (let i = 0; i < this._target.length; i++) {
@@ -503,13 +550,23 @@ class ArrayExtension {
         }
         return this;
     }
+    /**
+     * 唯一值处理
+     */
     unique() {
         this.reset(...new Set(this._target));
         return this;
     }
+    /**
+     * 获取唯一值
+     */
     getUnique() {
         return [...new Set(this._target)];
     }
+    /**
+     * 数组对比
+     * @param anotherArr 数组
+     */
     equal(anotherArr) {
         if (this._target.length !== anotherArr.length) {
             return false;
@@ -523,6 +580,11 @@ class ArrayExtension {
         }
         return true;
     }
+    /**
+     * 对象数组寻找值（首个）
+     * @param propName 属性名
+     * @param propValue 属性值
+     */
     findItem(propName, propValue) {
         for (let i = 0; i < this._target.length; i++) {
             const item = this._target[i];
@@ -532,6 +594,11 @@ class ArrayExtension {
         }
         return undefined;
     }
+    /**
+     * 对象数组寻找值（所有）
+     * @param propName 属性名
+     * @param propValue 属性值
+     */
     findItems(propName, propValue) {
         const result = [];
         for (let i = 0; i < this._target.length; i++) {
@@ -542,13 +609,25 @@ class ArrayExtension {
         }
         return result;
     }
+    /**
+     * 对象数组属性值提取
+     * @param prop 属性名
+     */
     propToArr(prop) {
         return this._target.map(item => item[prop]);
     }
 }
+/**
+ * 构造数组装饰器
+ * @param target 目标数组
+ */
 function arr(target) {
     return new ArrayExtension(target);
 }
+/**
+ * 转数组
+ * @param target 目标
+ */
 function toArray(target) {
     return Array.isArray(target) ? target : [target];
 }
@@ -668,6 +747,11 @@ function makeObservable(target, type, listener) {
     const { remove } = target.on(type, listener);
     return () => remove();
 }
+/**
+ * like setInterval
+ * @param handler 异步函数
+ * @param interval 间隔时间戳
+ */
 function makePromiseInterval(handler, interval = 0) {
     let destory = false;
     (async () => {
@@ -776,20 +860,41 @@ async function readFileAsJSON(file, encoding) {
     return JSON.parse(content);
 }
 
+/**
+ * 警告
+ * @param msg 信息
+ * @param args 参数集
+ */
 function warn(msg, ...args) {
     const warnArgs = [`[FSSGIS]: ${msg}`, ...args];
     console.warn(...warnArgs);
 }
 
+/**
+ * 装饰器：日志
+ * @param msg 信息
+ */
 function Log(msg) {
     return (target, key, descriptor) => {
         console.log(msg, target, key, descriptor);
     };
 }
 
+/**
+ * 异步函数结果缓存器（单例）
+ */
 class AsyncFunctionCache {
+    /**
+     * 唯一实例
+     */
     static _instance;
+    /**
+     * 缓存区
+     */
     _cache = new Map(); // eslint-disable-line
+    /**
+     * 构造异步函数结果缓存器
+     */
     constructor() {
         if (AsyncFunctionCache._instance) {
             return AsyncFunctionCache._instance;
@@ -797,6 +902,10 @@ class AsyncFunctionCache {
         AsyncFunctionCache._instance = this;
         return this;
     }
+    /**
+     * 移除缓存
+     * @param fn 异步函数
+     */
     remove(fn) {
         if (fn) {
             this._cache.delete(fn);
@@ -806,6 +915,10 @@ class AsyncFunctionCache {
         }
         return this;
     }
+    /**
+     * 缓存异步结果
+     * @param fn 缓存函数
+     */
     async withCache(fn) {
         const cache = this._cache.get(fn);
         if (cache) {
@@ -816,13 +929,23 @@ class AsyncFunctionCache {
         return ret;
     }
 }
+/**
+ * 缓存异步结果
+ * @param fn 缓存函数
+ */
 function withCache(fn) {
     return new AsyncFunctionCache().withCache(fn);
 }
+/**
+ * 移除缓存
+ * @param fn 缓存函数
+ */
 function removeCache(fn) {
     return new AsyncFunctionCache().remove(fn);
 }
 
+exports.ArrayExtension = ArrayExtension;
+exports.AsyncFunctionCache = AsyncFunctionCache;
 exports.Log = Log;
 exports.Observable = Observable;
 exports.arr = arr;

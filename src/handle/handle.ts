@@ -46,6 +46,11 @@ export function makeObservable<T, K extends keyof T> (target: Observable<T>, typ
   return () => remove()
 }
 
+/**
+ * like setInterval
+ * @param handler 异步函数
+ * @param interval 间隔时间戳
+ */
 export function makePromiseInterval (handler: (...args: any[]) => Promise<any>, interval = 0) { // eslint-disable-line
   let destory = false
   ;(async () => {

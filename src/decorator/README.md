@@ -14,11 +14,13 @@ decorator
 
 ▸ **Log**(`msg`): `MethodDecorator`
 
+装饰器：日志
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `msg` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `msg` | `string` | 信息 |
 
 #### Returns
 
@@ -26,4 +28,4 @@ decorator
 
 #### Defined in
 
-[decorator.ts:1](https://github.com/xizher/nhz-utils/blob/f583067/src/decorator/decorator.ts#L1)
+[decorator.ts:5](https://github.com/xizher/nhz-utils/blob/042334f/src/decorator/decorator.ts#L5)

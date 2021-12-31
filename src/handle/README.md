@@ -9,6 +9,7 @@ handle
 - [makeEventListener](README.md#makeeventlistener)
 - [makeInterval](README.md#makeinterval)
 - [makeObservable](README.md#makeobservable)
+- [makePromiseInterval](README.md#makepromiseinterval)
 - [makeTimeout](README.md#maketimeout)
 
 ## Functions
@@ -35,7 +36,7 @@ function which can stop the listerer
 
 #### Defined in
 
-[packages/utils/src/handle/handle.ts:32](https://github.com/xizher/nhz-utils/blob/f583067/src/handle/handle.ts#L32)
+[packages/utils/src/handle/handle.ts:33](https://github.com/xizher/nhz-utils/blob/042334f/src/handle/handle.ts#L33)
 
 ___
 
@@ -59,7 +60,7 @@ function which can stop the interval handler
 
 #### Defined in
 
-[packages/utils/src/handle/handle.ts:10](https://github.com/xizher/nhz-utils/blob/f583067/src/handle/handle.ts#L10)
+[packages/utils/src/handle/handle.ts:11](https://github.com/xizher/nhz-utils/blob/042334f/src/handle/handle.ts#L11)
 
 ___
 
@@ -90,7 +91,36 @@ like observable.on
 
 #### Defined in
 
-[packages/utils/src/handle/handle.ts:43](https://github.com/xizher/nhz-utils/blob/f583067/src/handle/handle.ts#L43)
+[packages/utils/src/handle/handle.ts:44](https://github.com/xizher/nhz-utils/blob/042334f/src/handle/handle.ts#L44)
+
+___
+
+### makePromiseInterval
+
+▸ **makePromiseInterval**(`handler`, `interval?`): () => `boolean`
+
+like setInterval
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `handler` | (...`args`: `any`[]) => `Promise`<`any`\> | `undefined` | 异步函数 |
+| `interval` | `number` | `0` | 间隔时间戳 |
+
+#### Returns
+
+`fn`
+
+▸ (): `boolean`
+
+##### Returns
+
+`boolean`
+
+#### Defined in
+
+[packages/utils/src/handle/handle.ts:54](https://github.com/xizher/nhz-utils/blob/042334f/src/handle/handle.ts#L54)
 
 ___
 
@@ -114,4 +144,4 @@ function which can stop the timeout handler
 
 #### Defined in
 
-[packages/utils/src/handle/handle.ts:20](https://github.com/xizher/nhz-utils/blob/f583067/src/handle/handle.ts#L20)
+[packages/utils/src/handle/handle.ts:21](https://github.com/xizher/nhz-utils/blob/042334f/src/handle/handle.ts#L21)

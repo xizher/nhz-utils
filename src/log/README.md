@@ -14,12 +14,14 @@ log
 
 ▸ **warn**(`msg`, ...`args`): `void`
 
+警告
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `msg` | `string` |
-| `...args` | `unknown`[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `msg` | `string` | 信息 |
+| `...args` | `unknown`[] | 参数集 |
 
 #### Returns
 
@@ -27,4 +29,4 @@ log
 
 #### Defined in
 
-[log.ts:1](https://github.com/xizher/nhz-utils/blob/f583067/src/log/log.ts#L1)
+[log.ts:6](https://github.com/xizher/nhz-utils/blob/042334f/src/log/log.ts#L6)
