@@ -756,8 +756,8 @@ function makePromiseInterval(handler, interval = 0) {
     let destory = false;
     (async () => {
         while (!destory) {
-            await handler();
             await sleep(interval);
+            !destory && await handler();
         }
     })();
     return () => destory = true;

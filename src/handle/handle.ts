@@ -55,8 +55,8 @@ export function makePromiseInterval (handler: (...args: any[]) => Promise<any>, 
   let destory = false
   ;(async () => {
     while (!destory) {
-      await handler()
       await sleep(interval)
+      !destory && await handler()
     }
   })()
   return () => destory = true
