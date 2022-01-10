@@ -182,6 +182,7 @@ declare function formatCash(num: number | string): string;
  * @param num 数值
  */
 declare function formatChineseNumber(num: number | string): string;
+declare function formatString(str: string, ...strs: unknown[]): string;
 
 /**
  * 对象扩展
@@ -545,4 +546,4 @@ declare function withCache<T extends AsyncFunction>(fn: T): Promise<ReturnPromis
  */
 declare function removeCache(fn?: AsyncFunction): AsyncFunctionCache;
 
-export { ArrayExtension, Arrayable, AsyncFunction, AsyncFunctionCache, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, Log, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectExcludeKeys, filterObjectIncludeKeys, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makePromiseInterval, makeTimeout, readFileAsJSON, readFileAsText, removeCache, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn, whenReture, withCache };
+export { ArrayExtension, Arrayable, AsyncFunction, AsyncFunctionCache, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, Log, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectExcludeKeys, filterObjectIncludeKeys, formatCash, formatChineseNumber, formatDate, formatString, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makePromiseInterval, makeTimeout, readFileAsJSON, readFileAsText, removeCache, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn, whenReture, withCache };

@@ -2,6 +2,7 @@ import {
   formatDate,
   formatCash,
   formatChineseNumber,
+  formatString,
 } from './format'
 
 test('formatDate(): can run right', () => {
@@ -28,4 +29,9 @@ test('formatChineseNumber() can run', () => {
   expect(formatChineseNumber(10000)).toBe('一万')
   expect(formatChineseNumber('101')).toBe('一百零一')
   expect(formatChineseNumber('abcde')).toBe('abcde')
+})
+
+
+test('formatString() can run', () => {
+  expect(formatString('{0} is {1} years old and likes {2}', 'John', 30, 'pizza')).toBe('John is 30 years old and likes pizza')
 })

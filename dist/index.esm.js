@@ -376,6 +376,12 @@ function formatChineseNumber(num) {
     }
     return re;
 }
+function formatString(str, ...strs) {
+    return str.replace(/{([0-9]+)}/g, (match, index) => {
+        // check if the argument is present
+        return typeof strs[index] === 'undefined' ? match : strs[index];
+    });
+}
 
 /**
  * 对象扩展
@@ -940,4 +946,4 @@ function removeCache(fn) {
     return new AsyncFunctionCache().remove(fn);
 }
 
-export { ArrayExtension, AsyncFunctionCache, Log, Observable, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectExcludeKeys, filterObjectIncludeKeys, formatCash, formatChineseNumber, formatDate, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makePromiseInterval, makeTimeout, readFileAsJSON, readFileAsText, removeCache, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn, whenReture, withCache };
+export { ArrayExtension, AsyncFunctionCache, Log, Observable, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectExcludeKeys, filterObjectIncludeKeys, formatCash, formatChineseNumber, formatDate, formatString, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makePromiseInterval, makeTimeout, readFileAsJSON, readFileAsText, removeCache, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn, whenReture, withCache };

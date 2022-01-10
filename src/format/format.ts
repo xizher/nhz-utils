@@ -96,3 +96,10 @@ export function formatChineseNumber (num: number | string) : string {
   }
   return re
 }
+
+export function formatString (str: string, ...strs : unknown[]) : string {
+  return str.replace(/{([0-9]+)}/g, (match, index) => {
+    // check if the argument is present
+    return typeof strs[index] === 'undefined' ? match : strs[index] as string
+  })
+}

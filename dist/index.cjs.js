@@ -380,6 +380,12 @@ function formatChineseNumber(num) {
     }
     return re;
 }
+function formatString(str, ...strs) {
+    return str.replace(/{([0-9]+)}/g, (match, index) => {
+        // check if the argument is present
+        return typeof strs[index] === 'undefined' ? match : strs[index];
+    });
+}
 
 /**
  * 对象扩展
@@ -963,6 +969,7 @@ exports.filterObjectIncludeKeys = filterObjectIncludeKeys;
 exports.formatCash = formatCash;
 exports.formatChineseNumber = formatChineseNumber;
 exports.formatDate = formatDate;
+exports.formatString = formatString;
 exports.getArrayItemRandom = getArrayItemRandom;
 exports.getMonth = getMonth;
 exports.getNextDate = getNextDate;
