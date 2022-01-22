@@ -39,6 +39,71 @@ declare const isNullable: (val: unknown) => val is null | undefined;
  * ```
  */
 declare const isPromise: (val: unknown) => val is Promise<unknown>;
+declare const isConstructor: (val: unknown) => boolean;
+
+/**
+ * 成员具体化
+ * @example\
+Concrete<{       // => {
+  a?: number     // =>   a: number
+  b?: string     // =>   b: string
+  c? () : void   // =>   c () : void
+  d?: {          // =>   d: {
+    e?: boolean  // =>     e: boolean
+  }              // =>   }
+}>               // => }
+ */
+declare type Concrete<Type> = {
+    [Property in keyof Type]-?: Type[Property] extends object ? Concrete<Type[Property]> : Type[Property];
+};
+/**
+ * 成员可选化
+ * @example
+Concrete<{       // => {
+  a: number      // =>   a?: number
+  b: string      // =>   b?: string
+  c () : void    // =>   c? () : void
+  d: {           // =>   d?: {
+    e: boolean   // =>     e?: boolean
+  }              // =>   }
+}>               // => }
+ */
+declare type Optional<Type> = {
+    [Property in keyof Type]?: Type[Property] extends object ? Optional<Type[Property]> : Type[Property];
+};
+/**
+ * 函数的返回类型，函数返回Promise则获取Promise的Resolve返回对象
+ * @example
+function test (b: string) : number {
+ return 1
+}
+async function test2 (a: number) : Promise<number> {
+ return 1
+}
+
+let t : ReturnType<typeof test> // number
+let t2 : ReturnType<typeof test2> // Promise<number>
+let t3 : ReturnPromiseType<typeof test> // number
+let t4 : ReturnPromiseType<typeof test2> // number
+ */
+declare type ReturnPromiseType<Type extends (...args: any[]) => any> = Type extends (...args: any[]) => Promise<infer Return> ? Return : ReturnType<Type>;
+declare type IsomorphicDestructurable<T extends Record<string, unknown>, A extends readonly any[]> = T & A;
+/**
+ * 非数组类型
+ */
+declare type NonArray<T> = T extends Array<unknown> ? T[0] : T;
+/**
+ * Null or whatever
+ */
+declare type Nullable<T> = T | null | undefined;
+/**
+ * Array, or not yet
+ */
+declare type Arrayable<T> = T | Array<T>;
+/**
+ * Function
+ */
+declare type Fn<T = void> = () => T;
 
 /**
  * Destructuring with object or array
@@ -54,6 +119,12 @@ declare function makeDestructurable<T extends Record<string, unknown>, A extends
  * @param target 函数返回结果验证
  */
 declare function whenReture<T>(intervalTime: number, fn: Fn<T>, target?: Function): Promise<NonNullable<T>>;
+/**
+ * 单例化无参函数返回结果
+ * @param fn 函数
+ */
+declare function makeSingleton<T extends new () => any>(cls: T): InstanceType<T>;
+declare function makeSingleton<T>(fn: Fn<T>): T;
 
 /**
  * 获取当前时间戳
@@ -385,70 +456,6 @@ declare function makePromiseInterval(handler: (...args: any[]) => Promise<any>, 
 declare function toLowerCaseFirstIndex(str: string): string;
 
 /**
- * 成员具体化
- * @example\
-Concrete<{       // => {
-  a?: number     // =>   a: number
-  b?: string     // =>   b: string
-  c? () : void   // =>   c () : void
-  d?: {          // =>   d: {
-    e?: boolean  // =>     e: boolean
-  }              // =>   }
-}>               // => }
- */
-declare type Concrete<Type> = {
-    [Property in keyof Type]-?: Type[Property] extends object ? Concrete<Type[Property]> : Type[Property];
-};
-/**
- * 成员可选化
- * @example
-Concrete<{       // => {
-  a: number      // =>   a?: number
-  b: string      // =>   b?: string
-  c () : void    // =>   c? () : void
-  d: {           // =>   d?: {
-    e: boolean   // =>     e?: boolean
-  }              // =>   }
-}>               // => }
- */
-declare type Optional<Type> = {
-    [Property in keyof Type]?: Type[Property] extends object ? Optional<Type[Property]> : Type[Property];
-};
-/**
- * 函数的返回类型，函数返回Promise则获取Promise的Resolve返回对象
- * @example
-function test (b: string) : number {
- return 1
-}
-async function test2 (a: number) : Promise<number> {
- return 1
-}
-
-let t : ReturnType<typeof test> // number
-let t2 : ReturnType<typeof test2> // Promise<number>
-let t3 : ReturnPromiseType<typeof test> // number
-let t4 : ReturnPromiseType<typeof test2> // number
- */
-declare type ReturnPromiseType<Type extends (...args: any[]) => any> = Type extends (...args: any[]) => Promise<infer Return> ? Return : ReturnType<Type>;
-declare type IsomorphicDestructurable<T extends Record<string, unknown>, A extends readonly any[]> = T & A;
-/**
- * 非数组类型
- */
-declare type NonArray<T> = T extends Array<unknown> ? T[0] : T;
-/**
- * Null or whatever
- */
-declare type Nullable<T> = T | null | undefined;
-/**
- * Array, or not yet
- */
-declare type Arrayable<T> = T | Array<T>;
-/**
- * Function
- */
-declare type Fn<T = void> = () => T;
-
-/**
   * 加载css
   * @param cssUrl CSS路径
   */
@@ -546,4 +553,4 @@ declare function withCache<T extends AsyncFunction>(fn: T): Promise<ReturnPromis
  */
 declare function removeCache(fn?: AsyncFunction): AsyncFunctionCache;
 
-export { ArrayExtension, Arrayable, AsyncFunction, AsyncFunctionCache, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, Log, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectExcludeKeys, filterObjectIncludeKeys, formatCash, formatChineseNumber, formatDate, formatString, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makePromiseInterval, makeTimeout, readFileAsJSON, readFileAsText, removeCache, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn, whenReture, withCache };
+export { ArrayExtension, Arrayable, AsyncFunction, AsyncFunctionCache, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, Log, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectExcludeKeys, filterObjectIncludeKeys, formatCash, formatChineseNumber, formatDate, formatString, getArrayItemRandom, getMonth, getNextDate, isBoolean, isConstructor, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makePromiseInterval, makeSingleton, makeTimeout, readFileAsJSON, readFileAsText, removeCache, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn, whenReture, withCache };

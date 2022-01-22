@@ -45,6 +45,21 @@ const isNullable = (val) => typeof val === 'undefined' || val === null;
 // eslint-disable-next-line
 // @ts-ignore
 const isPromise = (val) => val instanceof Promise;
+const isConstructor = (val) => {
+    try {
+        // @ts-ignore
+        new val();
+    }
+    catch (err) {
+        if (err.message.indexOf('is not a constructor') >= 0) {
+            return false;
+        }
+        else {
+            throw err;
+        }
+    }
+    return true;
+};
 
 /**
  * Destructuring with object or array
@@ -84,6 +99,14 @@ function whenReture(intervalTime, fn, target = (ret) => ret) {
             }
         }, intervalTime);
     });
+}
+function makeSingleton(fn) {
+    if (fn['_instance']) {
+        return fn['_instance'];
+    }
+    const instance = isConstructor(fn) ? new fn() : fn();
+    fn['_instance'] = instance;
+    return instance;
 }
 
 /**
@@ -974,6 +997,7 @@ exports.getArrayItemRandom = getArrayItemRandom;
 exports.getMonth = getMonth;
 exports.getNextDate = getNextDate;
 exports.isBoolean = isBoolean;
+exports.isConstructor = isConstructor;
 exports.isFunction = isFunction;
 exports.isNullable = isNullable;
 exports.isNumber = isNumber;
@@ -987,6 +1011,7 @@ exports.makeEventListener = makeEventListener;
 exports.makeInterval = makeInterval;
 exports.makeObservable = makeObservable;
 exports.makePromiseInterval = makePromiseInterval;
+exports.makeSingleton = makeSingleton;
 exports.makeTimeout = makeTimeout;
 exports.readFileAsJSON = readFileAsJSON;
 exports.readFileAsText = readFileAsText;

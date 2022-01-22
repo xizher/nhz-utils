@@ -41,6 +41,21 @@ const isNullable = (val) => typeof val === 'undefined' || val === null;
 // eslint-disable-next-line
 // @ts-ignore
 const isPromise = (val) => val instanceof Promise;
+const isConstructor = (val) => {
+    try {
+        // @ts-ignore
+        new val();
+    }
+    catch (err) {
+        if (err.message.indexOf('is not a constructor') >= 0) {
+            return false;
+        }
+        else {
+            throw err;
+        }
+    }
+    return true;
+};
 
 /**
  * Destructuring with object or array
@@ -80,6 +95,14 @@ function whenReture(intervalTime, fn, target = (ret) => ret) {
             }
         }, intervalTime);
     });
+}
+function makeSingleton(fn) {
+    if (fn['_instance']) {
+        return fn['_instance'];
+    }
+    const instance = isConstructor(fn) ? new fn() : fn();
+    fn['_instance'] = instance;
+    return instance;
 }
 
 /**
@@ -946,4 +969,4 @@ function removeCache(fn) {
     return new AsyncFunctionCache().remove(fn);
 }
 
-export { ArrayExtension, AsyncFunctionCache, Log, Observable, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectExcludeKeys, filterObjectIncludeKeys, formatCash, formatChineseNumber, formatDate, formatString, getArrayItemRandom, getMonth, getNextDate, isBoolean, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makePromiseInterval, makeTimeout, readFileAsJSON, readFileAsText, removeCache, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn, whenReture, withCache };
+export { ArrayExtension, AsyncFunctionCache, Log, Observable, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectExcludeKeys, filterObjectIncludeKeys, formatCash, formatChineseNumber, formatDate, formatString, getArrayItemRandom, getMonth, getNextDate, isBoolean, isConstructor, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makePromiseInterval, makeSingleton, makeTimeout, readFileAsJSON, readFileAsText, removeCache, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn, whenReture, withCache };

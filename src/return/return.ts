@@ -1,4 +1,5 @@
-import { Fn } from ".."
+import { Fn } from "../generic"
+import { isConstructor } from '../is'
 
 /**
  * Destructuring with object or array
@@ -45,4 +46,19 @@ export function whenReture<T> (intervalTime: number, fn: Fn<T>, target: Function
       }
     }, intervalTime)
   })
+}
+
+/**
+ * 单例化无参函数返回结果
+ * @param fn 函数
+ */
+export function makeSingleton <T extends new () => any> (cls: T) : InstanceType<T>
+export function makeSingleton <T> (fn: Fn<T>) : T
+export function makeSingleton (fn: any) : any {
+  if (fn['_instance']) {
+    return fn['_instance']
+  }
+  const instance = isConstructor(fn) ? new fn() : fn()
+  fn['_instance'] = instance
+  return instance
 }
