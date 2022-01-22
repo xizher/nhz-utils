@@ -48,3 +48,17 @@ export const isNullable = (val: unknown): val is undefined | null => typeof val 
 // eslint-disable-next-line
 // @ts-ignore
 export const isPromise = (val: unknown) : val is Promise<unknown> => val instanceof Promise
+
+export const isConstructor = (val: unknown) : boolean => {
+  try {
+    // @ts-ignore
+    new val();
+  } catch (err) {
+    if (err.message.indexOf('is not a constructor') >= 0) {
+      return false;
+    } else {
+      throw err
+    }
+  }
+  return true;
+}
