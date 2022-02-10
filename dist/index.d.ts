@@ -211,6 +211,9 @@ declare class Observable<T> {
     once<K extends keyof T>(name: K, callback: IObservableCallback<T[K], K, this>): void;
 }
 
+declare function fireEvent<T>(eventKey: string, detail?: T): void;
+declare function listenEvent<T>(eventKey: string, fn: (detail: T) => void): () => void;
+
 /**
  * 创建唯一码
  * @param isGuid 是否Guid标准的唯一码，默认为false
@@ -553,4 +556,4 @@ declare function withCache<T extends AsyncFunction>(fn: T): Promise<ReturnPromis
  */
 declare function removeCache(fn?: AsyncFunction): AsyncFunctionCache;
 
-export { ArrayExtension, Arrayable, AsyncFunction, AsyncFunctionCache, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, Log, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectExcludeKeys, filterObjectIncludeKeys, formatCash, formatChineseNumber, formatDate, formatString, getArrayItemRandom, getMonth, getNextDate, isBoolean, isConstructor, isFunction, isNullable, isNumber, isObject, isPromise, isString, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makePromiseInterval, makeSingleton, makeTimeout, readFileAsJSON, readFileAsText, removeCache, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn, whenReture, withCache };
+export { ArrayExtension, Arrayable, AsyncFunction, AsyncFunctionCache, Concrete, Fn, IObservableCallback, IObservableCallbackParams, IObservableHandle, IsomorphicDestructurable, Log, NonArray, Nullable, Observable, Optional, ReturnPromiseType, arr, createJSONUrl, createRandomBool, createRandomInt, createUid, createUrlFromBlob, debounce, deepCopy, deepCopyJSON, extend, filterObjectExcludeKeys, filterObjectIncludeKeys, fireEvent, formatCash, formatChineseNumber, formatDate, formatString, getArrayItemRandom, getMonth, getNextDate, isBoolean, isConstructor, isFunction, isNullable, isNumber, isObject, isPromise, isString, listenEvent, loadCss, loadJs, makeDestructurable, makeEventListener, makeInterval, makeObservable, makePromiseInterval, makeSingleton, makeTimeout, readFileAsJSON, readFileAsText, removeCache, sleep, throttle, timestamp, toArray, toLowerCaseFirstIndex, warn, whenReture, withCache };

@@ -269,6 +269,17 @@ class Observable {
 //   }
 // }
 
+function fireEvent(eventKey, detail) {
+    const event = new CustomEvent(eventKey, { detail });
+    window.dispatchEvent(event);
+}
+function listenEvent(eventKey, fn) {
+    const _fn = (e) => fn(e.detail); // eslint-disable-line
+    window.addEventListener(eventKey, _fn);
+    const stop = () => window.removeEventListener(eventKey, _fn);
+    return stop;
+}
+
 /**
  * 创建唯一码
  * @param isGuid 是否Guid标准的唯一码，默认为false
@@ -989,6 +1000,7 @@ exports.deepCopyJSON = deepCopyJSON;
 exports.extend = extend;
 exports.filterObjectExcludeKeys = filterObjectExcludeKeys;
 exports.filterObjectIncludeKeys = filterObjectIncludeKeys;
+exports.fireEvent = fireEvent;
 exports.formatCash = formatCash;
 exports.formatChineseNumber = formatChineseNumber;
 exports.formatDate = formatDate;
@@ -1004,6 +1016,7 @@ exports.isNumber = isNumber;
 exports.isObject = isObject;
 exports.isPromise = isPromise;
 exports.isString = isString;
+exports.listenEvent = listenEvent;
 exports.loadCss = loadCss;
 exports.loadJs = loadJs;
 exports.makeDestructurable = makeDestructurable;
